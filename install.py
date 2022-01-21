@@ -1,7 +1,6 @@
 import os
 from colorama import Fore
 import time
-from plugins.settings.main_settings import requirements_list
 
 os.system("pip3 install -U pyrogram")
 for rq in requirements_list:

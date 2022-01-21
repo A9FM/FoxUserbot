@@ -1,6 +1,6 @@
 from pyrogram import Client, filters
 from pyrogram.types import Message
-from plugins.settings.main_settings import module_list, settings, requirements_list, version
+from plugins.settings.main_settings import module_list, file_list, settings, version
 import asyncio
 from telegraph import Telegraph
 
@@ -38,4 +38,3 @@ async def help(client: Client, message: Message):
 ❤️ | If you find a malfunction, write to the support chat.""", disable_web_page_preview=True)
 
 module_list['Help'] = f'{prefix}help'
-requirements_list.append('telegraph')

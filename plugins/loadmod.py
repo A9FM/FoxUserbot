@@ -1,6 +1,6 @@
 from pyrogram import Client, filters
 from pyrogram.types import Message
-from plugins.settings.main_settings import module_list, settings, requirements_list
+from plugins.settings.main_settings import module_list, file_list, settings
 import wget
 
 prefix = settings['prefix']
@@ -16,4 +16,3 @@ async def loadmod(client: Client, message: Message):
         await message.edit("**An error has occurred**")
     
 module_list['Loadmod'] = f'{prefix}loadmod [link to the module]'
-requirements_list.append('wget')

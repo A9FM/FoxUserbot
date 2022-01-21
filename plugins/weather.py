@@ -1,6 +1,6 @@
 from pyrogram import Client, filters
 from pyrogram.types import Message
-from plugins.settings.main_settings import module_list, file_list, settings, requirements_list
+from plugins.settings.main_settings import module_list, file_list, settings
 import asyncio
 import requests
 import os

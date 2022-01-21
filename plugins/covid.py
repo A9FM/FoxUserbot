@@ -1,7 +1,7 @@
 from pyrogram import Client, filters
 from pyrogram.types import Message
 from covid import Covid
-from plugins.settings.main_settings import module_list, file_list, settings, requirements_list
+from plugins.settings.main_settings import module_list, file_list, settings
 
 prefix = settings['prefix']
 requirements = "covid"
@@ -42,5 +42,4 @@ async def regions(client: Client, message: Message):
     await message.edit(f"<code>{countr}</code>")
 
 module_list['StatisticsCovid19'] = f'{prefix}covid [region]'
-requirements_list.append('covid')
 file_list['StatisticsCovid19'] = 'covid.py'

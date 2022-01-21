@@ -19,7 +19,7 @@
 
 <h1>Custom modules</h1>
 
-<p>To add your module to the bot, create a pull request in the <a href='https://github.com/Dragon-Userbot/custom_modules/'>custom_modules</a> repository</p>
+<p>To add your module to the bot, create a pull request in the <a href='https://github.com/FoxUserbot/Modules/'>custom_modules</a> repository</p>
 
 ```python3
 from pyrogram import Client, filters

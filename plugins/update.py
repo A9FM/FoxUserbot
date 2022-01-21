@@ -2,14 +2,22 @@ from pyrogram import Client, filters
 from pyrogram.types import Message
 from plugins.settings.main_settings import module_list, file_list, settings
 import os
+import wget
+import zipfile
 
 prefix = settings['prefix']
+requirements = "wget"
 
 @Client.on_message(filters.command('update', prefixes=prefix) & filters.me)
 async def update(client: Client, message: Message):
   try:
     await message.edit('**Updating...**')
-    os.system('git pull')
+    link = "https://github.com/FoxUserbot/FoxUserbot/archive/refs/heads/main.zip"
+    wget.download(link, 'temp/archive.zip')
+    with zipfile.ZipFile("temp/archive.zip", "r") as zip_ref:
+      zip_ref.extractall("./..")
+    os.remove("temp/archive.zip")
+
     await message.edit('**The screenshot has been successfully updated**')
   except:
     await message.edit("**An error occured...**")

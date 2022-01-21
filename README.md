@@ -47,5 +47,7 @@ file_list['Example'] = 'example.py'
 
 <h1>Credits</h1>
 ➤ <a href="https://github.com/gh0stc0der1">Gh0stC0der1</a>
+
 ➤ <a href="https://github.com/terexdev">Terexdev</a>
+
 ➤ <a href="https://github.com/A9FM">A9FM</a>

@@ -8,7 +8,7 @@ prefix = settings['prefix']
 @Client.on_message(filters.command('unloadmod', prefixes=prefix))
 async def unloadmod(client, message):
     try:
-        module_name = message.text.replace(f'{}unloadmod', '')
+        module_name = message.text.replace('!unloadmod', '')
         params = module_name.split()
         module_name = params[0]
         del module_list[module_name]

@@ -15,7 +15,7 @@ async def afk_handler(client: Client, message: Message):
         afk_time = end - start
 
         if message.from_user.is_bot is False:
-            await message.reply_text(f"❕ Данный пользователь <b>AFK</b>.\n" f"<b>💬 Причина:</b> {reason}.\n" f"<b>⏳Длительность</b>: {afk_time}.")
+            await message.reply_text(f"❕ This user AFK.\n" f"<b>💬 Reason:</b> {reason}.\n" f"<b>⏳ Duration:</b> {afk_time}")
     except NameError:
         pass
 
@@ -31,7 +31,7 @@ async def afk(client: Client, message: Message):
             reason = message.text.split(" ", maxsplit=1)[1]
         else:
             reason = "Неизвестно"
-        await message.edit(f"❕ Вход в <b>AFK режим</b>.\n<b>💬 Причина:</b> {reason}.\n")
+        await message.edit(f"❕ You are going to <b>AFK</b>.\n<b>💬 Reason:</b> {reason}.\n")
     except Exception as f:
         await message.edit(f"error {f}")
 
@@ -43,11 +43,11 @@ async def unafk(client: Client, message: Message):
         end = datetime.datetime.now().replace(microsecond=0)
         afk_time = end - start
         await message.edit(
-            f"❕ | Пользователь вышел с <b>AFK режима.</b> \n💬 Причина <b>AFK режима:</b> {reason}\n⏳ Длительность <b>AFK:</b> {afk_time}"
+            f"❕ This user no longer <b>AFK.</b>\n⏳ Duration <b>AFK:</b> {afk_time}"
         )
         client.remove_handler(*handler)
     except Exception as error:
-        await message.edit("<b>Я не был в АФК</b>")
+        await message.edit("<b>Error. You don't be AFK</b>")
         await asyncio.sleep(3)
         await message.delete()
         

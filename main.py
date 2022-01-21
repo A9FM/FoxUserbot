@@ -7,5 +7,21 @@ from pyrogram import Client
 
 logging.basicConfig(filename="fox_userbot.log", filemode='w', format='%(asctime)s - %(message)s', datefmt='%d-%b-%y %H:%M:%S', level=logging.INFO)
 
+# restart
+app = Client("my_account")
+with app:
+    if len(sys.argv) == 4:
+        try:
+            restart_type = sys.argv[3]
+            if restart_type == "1":
+                text = "<code>Update process completed!</code>"
+            else:
+                text = "<code>Restart completed!</code>"
+            app.send_message(sys.argv[1], text)
+        except:
+            app.send_message(self, text)
+    app.stop()
+
+# start
 plugins = dict(root="plugins")
-Client("my_account", plugins=plugins).run()
+Client = Client("my_account", plugins=plugins).run()

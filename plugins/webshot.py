@@ -10,8 +10,12 @@ async def webshot(client: Client, message: Message):
     try:
         user_link = message.command[1]
         await message.delete()
-        full_link = f"https://webshot.deam.io/{user_link}/?delay=2000"
-        await client.send_document(message.chat.id, full_link, caption=f"**Screenshot of the page ** ```{user_link}```.")
+        try:
+            full_link = f"https://mini.s-shot.ru/1920x1080/JPEG/1024/Z100/?{user_link}"
+            await client.send_photo(message.chat.id, full_link, caption=f"**Screenshot of the page ⟶** {user_link}")
+        except:
+            full_link = f"https://webshot.deam.io/{user_link}/?width=1920&height=1080?delay=2000?type=png"
+            await client.send_photo(message.chat.id, full_link, caption=f"**Screenshot of the page ⟶** {user_link}")
     except:
         await message.delete()
         await client.send_message(

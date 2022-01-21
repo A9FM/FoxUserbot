@@ -3,7 +3,7 @@ from colorama import Fore
 import time
 import configparser
 
-requirements = ["pyrogram", "requests", "wget", 'telegraph']
+requirements = ["pyrogram", "requests", "wget", 'telegraph', "colorama"]
 for rq in requirements:
     os.system(f"pip3 install -U {rq}")
     

@@ -5,6 +5,7 @@ from pyrogram.types import Message
 from plugins.settings.main_settings import module_list, file_list, settings
 
 prefix = settings['prefix']
+requirements = ""
 
 @Client.on_message(filters.command("user_info", prefixes=prefix) & filters.me)
 async def get_user_inf(client: Client, message: Message):

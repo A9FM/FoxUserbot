@@ -4,6 +4,7 @@ from plugins.settings.main_settings import module_list, file_list, settings
 import asyncio
 
 prefix = settings['prefix']
+requirements = ""
 
 @Client.on_message(filters.command("eye", prefixes=prefix) & filters.me)
 async def eye(client: Client, message: Message):

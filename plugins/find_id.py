@@ -3,6 +3,7 @@ from plugins.settings.main_settings import module_list, file_list, settings
 from pyrogram.types import Message
 import asyncio
 
+requirements = ""
 prefix = settings['prefix']
 
 @Client.on_message(filters.command('find_id', prefixes=prefix) & filters.me)

@@ -2,8 +2,11 @@ from pyrogram import Client, filters
 from pyrogram.types import Message
 from plugins.settings.main_settings import module_list, file_list, settings, requirements_list
 import asyncio
+import requests
+import os
 
 prefix = settings['prefix']
+requirements = "requests"
 
 def get_pic(city):
     file_name = f"{city}.png"
@@ -27,7 +30,7 @@ async def weather(client: Client, message: Message):
     await message.edit("🕑 Просматриваю погоду в вашей стране")
     r = requests.get(f"https://wttr.in/{city}?m?M?0?q?T&lang=ru")
     await message.edit(f"🗺 Ваш город : {r.text}")
-    await app.send_photo(
+    await client.send_photo(
         chat_id=message.chat.id,
         photo=get_pic(city),
         reply_to_message_id=message.message_id)

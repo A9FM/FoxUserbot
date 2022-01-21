@@ -6,6 +6,7 @@ from pyrogram.types import Message
 from plugins.settings.main_settings import module_list, file_list, settings
 
 prefix = settings['prefix']
+requirements = ""
 
 async def afk_handler(client: Client, message: Message):
     try:

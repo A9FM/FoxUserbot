@@ -4,6 +4,7 @@ from covid import Covid
 from plugins.settings.main_settings import module_list, file_list, settings, requirements_list
 
 prefix = settings['prefix']
+requirements = "covid"
 
 @Client.on_message(filters.command("covid", prefixes=prefix) & filters.me)
 async def covid_local(client: Client, message: Message):

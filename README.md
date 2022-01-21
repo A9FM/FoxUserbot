@@ -41,7 +41,7 @@ file_list['Example'] = 'example.py'
 ```
 
 <h1>Groups and support</h1>
-<a href="https://t.me/foxuserbot0">
+<a href="https://t.me/foxteam0">
 <img alt="Telegram" src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram">
 </a>
 

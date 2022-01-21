@@ -10,11 +10,10 @@
         Custom modules
     </a>
     <br>
-    <img alt="Code style" src="https://img.shields.io/badge/code%20style-black-000000.svg?style=for-the-badge">
     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/FoxUserbot/FoxUserbot?style=for-the-badge">
+    <img alt="GitHub Issues" src="https://img.shields.io/github/issues/FoxUserbot/FoxUserbot?style=for-the-badge">
     <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/FoxUserbot/FoxUserbot?style=for-the-badge">
     <img alt="GitHub Repo size" src="https://img.shields.io/github/repo-size/FoxUserbot/FoxUserbot?style=for-the-badge">
-    <img alt="GitHub Issues" src="https://img.shields.io/github/issues/FoxUserbot/FoxUserbot?style=for-the-badge">
 </p>
 
 

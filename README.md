@@ -10,9 +10,11 @@
         Custom modules
     </a>
     <br>
-    <img src="https://img.shields.io/badge/code%20style-black-000000.svg?style=for-the-badge" alt="Code style">
+    <img alt="Code style" src="https://img.shields.io/badge/code%20style-black-000000.svg?style=for-the-badge">
     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/FoxUserbot/FoxUserbot?style=for-the-badge">
     <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/FoxUserbot/FoxUserbot?style=for-the-badge">
+    <img alt="GitHub Repo size" src="https://img.shields.io/github/repo-size/FoxUserbot/FoxUserbot?style=for-the-badge">
+    <img alt="GitHub Issues" src="https://img.shields.io/github/issues/FoxUserbot/FoxUserbot?style=for-the-badge">
 </p>
 
 
@@ -37,3 +39,8 @@ async def example_edit(client: Client, message: Message):
 module_list['Example'] = f'{prefix}example_edit'
 file_list['Example'] = 'example.py'
 ```
+
+<h1>Groups and support</h1>
+<a href="https://t.me/foxuserbot0">
+<img alt="Telegram" src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram">
+</a>

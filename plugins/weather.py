@@ -1,11 +1,12 @@
 from pyrogram import Client, filters
 from pyrogram.types import Message
-from plugins.settings.main_settings import module_list, file_list, settings
+from plugins.settings.main_settings import module_list, file_list
 import asyncio
 import requests
 import os
 
-prefix = settings['prefix']
+from prefix import my_prefix
+prefix = my_prefix()
 
 def get_pic(city):
     file_name = f"{city}.png"

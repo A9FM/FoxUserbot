@@ -1,7 +1,8 @@
 from pyrogram import Client, filters
-from plugins.settings.main_settings import module_list, file_list, settings
+from plugins.settings.main_settings import module_list, file_list
 
-prefix = settings['prefix']
+from prefix import my_prefix
+prefix = my_prefix()
 
 @Client.on_message(filters.command('support', prefixes=prefix))
 async def support(client, message):

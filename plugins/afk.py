@@ -3,9 +3,10 @@ import datetime
 from pyrogram import Client, filters
 from pyrogram.handlers import MessageHandler
 from pyrogram.types import Message
-from plugins.settings.main_settings import module_list, file_list, settings
+from plugins.settings.main_settings import module_list, file_list
 
-prefix = settings['prefix']
+from prefix import my_prefix
+prefix = my_prefix()
 
 async def afk_handler(client: Client, message: Message):
     try:

@@ -2,9 +2,10 @@ import asyncio
 from pyrogram import Client, filters
 from pyrogram.raw import functions
 from pyrogram.types import Message
-from plugins.settings.main_settings import module_list, file_list, settings
+from plugins.settings.main_settings import module_list, file_list
 
-prefix = settings['prefix']
+from prefix import my_prefix
+prefix = my_prefix()
 
 @Client.on_message(filters.command("user_info", prefixes=prefix) & filters.me)
 async def get_user_inf(client: Client, message: Message):

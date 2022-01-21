@@ -2,9 +2,10 @@ from pyrogram import Client, filters
 from pyrogram.types import Message
 from subprocess import Popen, PIPE, TimeoutExpired
 from time import perf_counter
-from plugins.settings.main_settings import module_list, file_list, settings
+from plugins.settings.main_settings import module_list, file_list
 
-prefix = settings['prefix']
+from prefix import my_prefix
+prefix = my_prefix()
 
 @Client.on_message(filters.command(["shell", "sh"], prefix) & filters.me)
 async def example_edit(client: Client, message: Message):

@@ -3,9 +3,10 @@ import time
 from pyrogram import Client, filters
 from pyrogram.errors import FloodWait
 from pyrogram.types import Message
-from plugins.settings.main_settings import module_list, file_list, settings
+from plugins.settings.main_settings import module_list, file_list
 
-prefix = settings['prefix']
+from prefix import my_prefix
+prefix = my_prefix()
 
 @Client.on_message(filters.command("type", prefixes=prefix) & filters.me)
 async def type(client: Client, message: Message):

@@ -1,5 +1,5 @@
 <p align="center">
-        <img src="https://github.com/FoxUserbot/FoxUserbot/raw/main/logo.jpg" width="500" alt="FoxUserbot">
+        <img src="https://github.com/FoxUserbot/FoxUserbot/raw/main/logo.png" width="500" alt="FoxUserbot">
     </a>
     <br>
     <b>FoxUserbot</b>

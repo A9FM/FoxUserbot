@@ -44,3 +44,8 @@ file_list['Example'] = 'example.py'
 <a href="https://t.me/foxuserbot0">
 <img alt="Telegram" src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram">
 </a>
+
+<h1>Credits</h1>
+➤ <a href="https://github.com/gh0stc0der1">Gh0stC0der1</a>
+➤ <a href="https://github.com/terexdev">Terexdev</a>
+➤ <a href="https://github.com/A9FM">A9FM</a>

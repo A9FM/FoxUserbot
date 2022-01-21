@@ -10,10 +10,12 @@
         Custom modules
     </a>
 <br><br>
+<a href="https://github.com/FoxUserbot/FoxUserbot>
     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/FoxUserbot/FoxUserbot?style=for-the-badge">
     <img alt="GitHub Issues" src="https://img.shields.io/github/issues/FoxUserbot/FoxUserbot?style=for-the-badge">
     <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/FoxUserbot/FoxUserbot?style=for-the-badge">
     <img alt="GitHub Repo size" src="https://img.shields.io/github/repo-size/FoxUserbot/FoxUserbot?style=for-the-badge">
+</a>
 </p>
 
 

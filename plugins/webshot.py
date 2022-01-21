@@ -3,7 +3,6 @@ from pyrogram.types import Message
 from plugins.settings.main_settings import module_list, file_list, settings
 
 prefix = settings['prefix']
-requirements = ""
 
 @Client.on_message(filters.command("webshot", prefixes=prefix) & filters.me)
 async def webshot(client: Client, message: Message):

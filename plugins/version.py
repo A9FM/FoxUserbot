@@ -3,8 +3,7 @@ from pyrogram import Client, filters
 from pyrogram.types import Message
 from plugins.settings.main_settings import module_list, file_list, settings
 
-prefix = settings['prefix'] 
-requirements = ""
+prefix = settings['prefix']
 
 @Client.on_message(filters.command('version', prefixes=prefix) & filters.me) 
 async def version(client: Client, message: Message):

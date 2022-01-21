@@ -5,7 +5,6 @@ from pyrogram.errors import FloodWait
 from pyrogram.types import Message
 from plugins.settings.main_settings import module_list, file_list, settings
 
-reuirements = ""
 prefix = settings['prefix']
 
 @Client.on_message(filters.command("type", prefixes=prefix) & filters.me)

@@ -2,7 +2,6 @@ from pyrogram import Client, filters
 from plugins.settings.main_settings import module_list, file_list, settings
 import os
 
-requirements = ""
 prefix = settings['prefix']
 
 @Client.on_message(filters.command('unloadmod', prefixes=prefix))

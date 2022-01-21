@@ -5,7 +5,6 @@ import asyncio
 from telegraph import Telegraph
 
 prefix = settings['prefix']
-requirements = "telegraph"
 
 @Client.on_message(filters.command('help', prefixes=prefix) & filters.me)
 async def help(client: Client, message: Message):

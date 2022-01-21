@@ -5,7 +5,6 @@ import secrets
 import string
 import asyncio
 
-requirements = ""
 prefix = settings['prefix']
 
 @Client.on_message(filters.command('gen_password', prefixes=prefix) & filters.me)

@@ -6,7 +6,6 @@ import requests
 import os
 
 prefix = settings['prefix']
-requirements = "requests"
 
 def get_pic(city):
     file_name = f"{city}.png"

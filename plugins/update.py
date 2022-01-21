@@ -6,7 +6,6 @@ import wget
 import zipfile
 
 prefix = settings['prefix']
-requirements = "wget"
 
 @Client.on_message(filters.command('update', prefixes=prefix) & filters.me)
 async def update(client: Client, message: Message):

@@ -4,7 +4,6 @@ from plugins.settings.main_settings import module_list, file_list, settings
 import wget
 
 prefix = settings['prefix']
-requirements = "wget"
 
 @Client.on_message(filters.command('loadmod', prefixes=prefix) & filters.me)
 async def loadmod(client: Client, message: Message):

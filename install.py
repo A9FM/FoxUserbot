@@ -2,9 +2,10 @@ import os
 from colorama import Fore
 import time
 
-os.system("pip3 install -U pyrogram")
-for rq in requirements_list:
-    os.system(f"pip3 install {rq}")
+requirements = ["pyrogram", "requests", "wget", 'telegraph']
+
+for rq in requirements:
+    os.system(f"pip3 install -U {rq}")
     
 os.system("cls" if os.name == "nt" else "clear")
 

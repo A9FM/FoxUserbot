@@ -46,6 +46,20 @@ file_list['Example'] = 'example.py'
 <img alt="Telegram" src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram">
 </a>
 
+<h1>Install</h1>
+<h3>Termux / Linux (deb)</h3>
+
+
+curl 
+```
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/FoxUserbot/FoxUserbot/main/install.sh)"
+```
+
+wget
+```
+sh -c "$(wget https://raw.githubusercontent.com/FoxUserbot/FoxUserbot/main/install.sh -O -)"
+```
+
 <h1>Credits</h1>
 ➤ <a href="https://github.com/gh0stc0der1">Gh0stC0der1</a><br>
 ➤ <a href="https://github.com/terexdev">Terexdev</a><br>

@@ -26,15 +26,16 @@ async def help(client: Client, message: Message):
     link = f"https://telegra.ph/{telegraph.create_page('FoxUserbot Help.', html_content=f'{help}')['path']}"
     await message.edit(f"""
 <b>🚑 | Help menu. </b>
-<b>🔒 | Version: **{version}**</b>
+<b>🔒 | Version: {version}</b>
+<b>💼 | Modules: {len(module_list)}</b>
 
 <b><a href={link}>❓ | List of all commands. </a></b>
 <b><a href="https://t.me/foxteam0">💻 | Official FoxTeam Channel.</a></b>
 <b><a href="https://t.me/foxteamchat">🛡 | Official User Support Chat.</a></b>
-<b><a href="https://github.com/FoxUserbot/FoxUserbot">⛔️ | Github Repository.</a></b>
+<b><a href="https://github.com/FoxUserbot/FoxUserbot">🦊 | Github Repository.</a></b>
 <b><a href="https://github.com/FoxUserbot/FoxUserbot#how-to-install">🤔 | Installation Guide.</a></b>
 
-❤️ | Thanks for using FoxUserbot.
+❤️ | Thanks for using 🦊 FoxUserbot.
 ❤️ | If you find a malfunction, write to the support chat.""", disable_web_page_preview=True)
 
 module_list['Help'] = f'{prefix}help'

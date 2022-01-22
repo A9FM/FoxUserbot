@@ -9,7 +9,6 @@ import zipfile
 from prefix import my_prefix
 prefix = my_prefix()
 
-
 async def restart(message: Message, restart_type):
     if restart_type == "update":
         text = "1"
@@ -39,16 +38,16 @@ async def restart(message: Message, restart_type):
         )
 
 
-# Обновы
+# Restart
 @Client.on_message(filters.command("restart", prefix) & filters.me)
 async def restart_get(client: Client, message: Message):
     try:
-        await message.edit("Restart...")
+        await message.edit("**Restarting userbot...**")
         await restart(message, restart_type="restart")
     except:
         await message.edit("**An error occured...**")
 
-
+# Update
 @Client.on_message(filters.command('update', prefixes=prefix) & filters.me)
 async def update(client: Client, message: Message):
     try:
@@ -65,5 +64,5 @@ async def update(client: Client, message: Message):
         await message.edit("**An error occured...**")
 
 
-module_list['starter'] = f'{prefix}update | {prefix}restart'
-file_list['starter'] = 'starter.py'
+module_list['Restarter'] = f'{prefix}update | {prefix}restart'
+file_list['Restarter'] = 'restarter.py'

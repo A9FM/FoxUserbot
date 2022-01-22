@@ -30,7 +30,7 @@ async def afk(client: Client, message: Message):
         if len(message.text.split()) >= 2:
             reason = message.text.split(" ", maxsplit=1)[1]
         else:
-            reason = "Неизвестно"
+            reason = "Гт"
         await message.edit(f"❕ You are going to <b>AFK</b>.\n<b>💬 Reason:</b> {reason}.\n")
     except Exception as f:
         await message.edit(f"error {f}")

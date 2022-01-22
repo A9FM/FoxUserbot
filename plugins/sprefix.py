@@ -25,5 +25,5 @@ async def sprefix(client: Client, message: Message):
     else:
         await message.edit("<b>⚠️ | Префикс не может быть пустым!</b>")
 
-module_list['sprefix'] = f'{prefix}sp'
-file_list['sprefix'] = 'sprefix.py'
+module_list['Sprefix'] = f'{prefix}sp'
+file_list['Sprefix'] = 'sprefix.py'

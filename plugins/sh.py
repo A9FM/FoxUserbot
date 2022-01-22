@@ -36,5 +36,5 @@ async def example_edit(client: Client, message: Message):
     await message.edit(text)
     cmd_obj.kill()
 
-module_list['sh'] = f'{prefix}sh'
-file_list['sh'] = 'sh.py'
+module_list['Sh'] = f'{prefix}sh'
+file_list['Sh'] = 'sh.py'

@@ -7,8 +7,7 @@ prefix = my_prefix()
 
 @Client.on_message(filters.command('send_log', prefixes=prefix) & filters.me)
 async def send_log(client: Client, message: Message):
-	chat = message.chat.id
 	await message.delete()
-	await client.send_document(chat, "fox_userbot.log")
+	await client.send_document(message.chat.id, "temp/fox_userbot.log")
 
 module_list['SendLog'] = f'{prefix}send_log'

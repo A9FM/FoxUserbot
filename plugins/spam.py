@@ -18,7 +18,6 @@ async def statspam(client: Client, message: Message):
         await msg.delete()
         await asyncio.sleep(0.1)
 
-
 @Client.on_message(filters.command("spam", prefixes=prefix) & filters.me)
 async def spam(client: Client, message: Message):
     quantity = message.command[1]

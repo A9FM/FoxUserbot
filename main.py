@@ -5,7 +5,7 @@ import configparser
 import prefix
 from pyrogram import Client
 
-logging.basicConfig(filename="fox_userbot.log", filemode='w', format='%(asctime)s - %(message)s', datefmt='%d-%b-%y %H:%M:%S', level=logging.INFO)
+logging.basicConfig(filename="temp/fox_userbot.log", filemode='w', format='%(asctime)s - %(message)s', datefmt='%d-%b-%y %H:%M:%S', level=logging.INFO)
 
 # restart
 app = Client("my_account")
@@ -16,7 +16,7 @@ with app:
             if restart_type == "1":
                 text = "<code>Update process completed!</code>"
             else:
-                text = "<code>Restart completed!</code>"
+                text = "**Userbot succesfully Restarted**"
             app.send_message(sys.argv[1], text)
         except:
             app.send_message(self, text)

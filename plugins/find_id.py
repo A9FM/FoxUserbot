@@ -8,7 +8,11 @@ prefix = my_prefix()
 
 @Client.on_message(filters.command('find_id', prefixes=prefix) & filters.me)
 async def find_id(client: Client, message: Message):
-  await message.edit(f'**ID of this chat: ** ```{message.chat.id}```')
+    if message.reply_to_message is None:
+        await message.edit(f"Chat ID: `{message.chat.id}`")
+    else:
+        await message.edit(f"User ID: `{message.reply_to_message.from_user.id}`\nChat ID: `{message.chat.id}`")
+
 
 module_list['FindIDThisChat'] = f'{prefix}fing_id'
 file_list['FindIDThisChat'] = 'find_id.py'

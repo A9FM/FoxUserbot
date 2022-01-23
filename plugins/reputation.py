@@ -43,5 +43,22 @@ async def repUp(client: Client, message: Message):
     except:
         pass
 
-module_list['Reputation'] = 'reply "+" or "-" from another user'
+@Client.on_message(filters.command("rep", prefix) & filters.me)
+async def repNakrutka(client: Client, message: Message):
+    try:
+        with open("temp/reputation", "w+") as f:
+            rep = str(int(message.command[1]))
+            f.write(rep)
+            f.close()
+            text = f"Reputation edited.\nReputation: {str(rep)}"
+            await message.edit(text)
+
+    except Exception as error:
+        await message.edit(
+            f"Error! Reputation edited to '0'\n\nLog: {error}")
+        with open("temp/reputation", "w+") as f:
+            f.write(str(int(0)))
+            f.close()
+
+module_list['Reputation'] = f'reply "+" or "-" from another user | {prefix}rep [number]'
 file_list['Reputation'] = 'reputation.py'

@@ -10,12 +10,17 @@ prefix = my_prefix()
 @Client.on_message(filters.command('loadmod', prefixes=prefix) & filters.me)
 async def loadmod(client: Client, message: Message):
     try:
-        link = message.command[1]
-        wget.download(link, 'plugins/')
-        await message.edit("**The module has been loaded successfully.**\nRestart...")
+        if not message.reply_to_message.document:
+            await message.edit("<b>Load module...</b>")
+            link = message.command[1]
+            wget.download(link, 'plugins/')
+        else:
+            await client.download_media(message.reply_to_message.document, file_name='plugins/')
+        await message.edit(
+            f"**The module has been loaded successfully.**\nRestart..."
+        )
         await restart(message, restart_type="restart")
     except:
         await message.edit("**An error has occurred**")
-
 
 module_list['Loadmod'] = f'{prefix}loadmod [link to the module]'

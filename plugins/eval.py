@@ -7,7 +7,7 @@ from plugins.settings.main_settings import module_list, file_list
 from prefix import my_prefix
 prefix = my_prefix()
 
-@Client.on_message(filters.command(["eval"], prefix) & filters.me)
+@Client.on_message(filters.command("eval", prefixes=prefix) & filters.me)
 def user_exec(client: Client, message: Message):
     reply = message.reply_to_message
     code = ""

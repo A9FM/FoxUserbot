@@ -11,7 +11,7 @@ prefix = my_prefix()
 def get_pic(city):
     file_name = f"{city}.png"
     with open(file_name, "wb") as pic:
-        response = requests.get("http://wttr.in/{citys}_2&lang=ru.png", stream=True)
+        response = requests.get(f"http://wttr.in/{city}_2&lang=us.png", stream=True)
 
         if not response.ok:
             print(response)

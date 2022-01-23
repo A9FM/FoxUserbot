@@ -20,7 +20,7 @@ with app:
             app.send_message(sys.argv[1], text)
         except:
             app.send_message(self, text)
-        app.join_chat("foxteam0")
+    # app.join_chat("foxteam0")
     app.stop()
 
 # start

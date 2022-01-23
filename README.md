@@ -47,20 +47,36 @@ file_list['Example'] = 'example.py'
 </a>
 
 <h1>Install</h1>
-<h3>Termux / Linux (deb)</h3>
+<h2>Termux / Linux (deb)</h2>
+<h3>Install</h3>
 
-
-curl 
+curl
 ```
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/FoxUserbot/FoxUserbot/main/install.sh)"
 ```
+
 
 wget
 ```
 sh -c "$(wget https://raw.githubusercontent.com/FoxUserbot/FoxUserbot/main/install.sh -O -)"
 ```
 
+<h3>How to start</h3>
+
+```
+cd FoxUserbot && python3 main.py
+```
+
+<h2>Windows</h2>
+<h3>Install</h3>
+Install <a href="https://www.python.org/downloads/">python3</a> (in installer Check the box [ADD TO PATH])
+Download and Unzip <a href="https://github.com/FoxUserbot/FoxUserbot/archive/refs/heads/main.zip">This file (!don't rename the directory!)</a>
+Open install.py
+
+<h3>How to start</h3>
+Open windows.bat
+
 <h1>Credits</h1>
-➤ <a href="https://github.com/gh0stc0der1">Gh0stC0der1</a><br>
-➤ <a href="https://github.com/terexdev">Terexdev</a><br>
-➤ <a href="https://github.com/A9FM">A9FM</a>
+➤ Gh0stC0der1 <a href="https://github.com/gh0stc0der1">Github</a><br>
+➤ Terexdev <a href="https://github.com/terexdev">Github</a> | <a href="https://t.me/Klarlex">Telegram</a> <br>
+➤ A9FM <a href="https://github.com/A9FM">Github</a> | <a href="https://github.com/ф9_аь">Telegram</a> <br>

@@ -21,12 +21,11 @@ async def sprefix(client: Client, message: Message):
         with open(config_path, "w") as config_file:
             config.write(config_file)
         await message.edit(
-            f"<b>✅ | Префикс [ <code>{prefix}</code> ] установлен!</b>\n⏳ | Пожалуйста, дождитесь окончания перезагрузки"
+            f"<b>prefix [ <code>{prefix}</code> ] set!</b>\nRestarting userbot..."
         )
         await restart(message, restart_type="restart")
-
     else:
-        await message.edit("<b>⚠️ | Префикс не может быть пустым!</b>")
+        await message.edit("<b>prefix don't be None</b>")
 
 module_list['Sprefix'] = f'{prefix}sp'
 file_list['Sprefix'] = 'sprefix.py'

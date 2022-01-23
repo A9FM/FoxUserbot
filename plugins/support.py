@@ -8,10 +8,10 @@ prefix = my_prefix()
 async def support(client, message):
     await message.delete()
     await client.send_photo(
-    chat_id=message.chat.id,
-    photo="logo.jpg",
-    caption="""**FOX USERBOT**\n`По всем вопросам и предложениям обращаться к` @foxuserbot0"""
-)
+        chat_id=message.chat.id,
+        photo="https://github.com/FoxUserbot/FoxUserbot/raw/main/logo.png",
+        caption="Support: @foxsupportedrobot"
+    )
 
 module_list['Support'] = f'{prefix}support'
 file_list['Support'] = 'support.py'

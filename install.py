@@ -13,8 +13,8 @@ os.system("cls" if os.name == "nt" else "clear")
 
 
 def createConfig(path):
-    print(Fore.GREEN + "Добро пожаловать в установщик FoxUserBot.")
-    print(Fore.GREEN + "Сейчас вам предложат ввести номер телефона и код входа от вашего аккаунта в Telegram, сделайте это для установки FoxUserBot.\nПри последующем запуске, пишите в терминал python3 main.py")
+    print(Fore.GREEN + "FoxUserBot installed.")
+    print(Fore.GREEN + "Start FoxUserbot... (if you get error, writte 'python3 main.py' in the terminal)")
     try:
         os.system("python3 main.py")
     except:

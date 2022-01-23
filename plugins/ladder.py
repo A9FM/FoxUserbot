@@ -16,5 +16,5 @@ async def example_edit(client: Client, message: Message):
     await message.edit(ot)
 
 
-module_list['Ladder'] = f'{prefix}ladder'
+module_list['Ladder'] = f'{prefix}ladder [text]'
 file_list['Ladder'] = 'ladder.py'

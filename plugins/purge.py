@@ -39,5 +39,5 @@ async def purge(client: Client, message: Message):
     except:
         await message.edit("<i>Don't have permision.</i>")
 
-module_list['Purge'] = f'{prefix}del | {prefix}purge'
+module_list['Purge'] = f'{prefix}del [reply] | {prefix}purge [reply]'
 file_list['Purge'] = 'purge.py'

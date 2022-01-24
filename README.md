@@ -75,8 +75,10 @@ cd FoxUserbot && python3 main.py
 
 <h2>Windows</h2>
 <h3>Install</h3>
-Install <a href="https://www.python.org/downloads/">python3</a> (in installer Check the box [ADD TO PATH])
+Install <a href="https://www.python.org/downloads/">python3</a>
+
 Download and Unzip <a href="https://github.com/FoxUserbot/FoxUserbot/archive/refs/heads/main.zip">This file (!don't rename the directory!)</a>
+
 Open install.py
 
 <h3>How to start</h3>

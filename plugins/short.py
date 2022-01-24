@@ -1,18 +1,19 @@
 from pyrogram import Client, filters
-from pyrogram.types import Message
 from plugins.settings.main_settings import module_list, file_list
 import requests
 
 from prefix import my_prefix
+
 prefix = my_prefix()
 
+
 @Client.on_message(filters.command("example_edit", prefixes=prefix) & filters.me)
-async def example_edit(client: Client, message: Message):
+async def example_edit(client, message):
     await message.edit("<code>This is an example module</code>")
 
 
 @Client.on_message(filters.command("short", prefix) & filters.me)
-async def shorten_link_command(client: Client, message: Message):
+async def shorten_link_command(client, message):
     await message.edit("Shorting...")
     if message.reply_to_message:
         link = message.reply_to_message.text
@@ -28,7 +29,6 @@ async def shorten_link_command(client: Client, message: Message):
     if data["status"] == 7:
         shortened_url = data["shortLink"]
         await message.edit(f"Short URL: {shortened_url}")
-
 
 
 module_list['ShortURL'] = f'{prefix}short [Reply | link]'

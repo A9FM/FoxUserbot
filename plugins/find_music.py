@@ -1,5 +1,4 @@
 from pyrogram import Client, filters
-from pyrogram.types import Message
 from plugins.settings.main_settings import module_list, file_list
 import asyncio
 import time
@@ -8,7 +7,7 @@ from prefix import my_prefix
 prefix = my_prefix()
 
 @Client.on_message(filters.command("m", prefix) & filters.me)
-async def send_music(client: Client, message: Message):
+async def send_music(client, message):
     await message.edit("Search...")
     song_name = ""
     if len(message.command) > 1:

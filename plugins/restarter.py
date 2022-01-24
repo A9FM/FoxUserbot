@@ -1,12 +1,13 @@
-from pyrogram import Client, filters
-from pyrogram.types import Message
-from plugins.settings.main_settings import module_list, file_list
 import os
-import sys
-import wget
 import zipfile
 
+import wget
+from pyrogram import Client, filters
+from pyrogram.types import Message
+
+from plugins.settings.main_settings import module_list, file_list
 from prefix import my_prefix
+
 prefix = my_prefix()
 
 async def restart(message: Message, restart_type):
@@ -40,7 +41,7 @@ async def restart(message: Message, restart_type):
 
 # Restart
 @Client.on_message(filters.command("restart", prefix) & filters.me)
-async def restart_get(client: Client, message: Message):
+async def restart_get(client, message):
     try:
         await message.edit("**Restarting userbot...**")
         await restart(message, restart_type="restart")
@@ -49,7 +50,7 @@ async def restart_get(client: Client, message: Message):
 
 # Update
 @Client.on_message(filters.command('update', prefixes=prefix) & filters.me)
-async def update(client: Client, message: Message):
+async def update(client, message):
     try:
         await message.edit('**Updating...**')
         link = "https://github.com/FoxUserbot/FoxUserbot/archive/refs/heads/main.zip"

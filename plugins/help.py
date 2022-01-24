@@ -1,5 +1,4 @@
 from pyrogram import Client, filters
-from pyrogram.types import Message
 from plugins.settings.main_settings import module_list, file_list, version
 import asyncio
 from telegraph import Telegraph
@@ -8,7 +7,7 @@ from prefix import my_prefix
 prefix = my_prefix()
 
 @Client.on_message(filters.command('help', prefixes=prefix) & filters.me)
-async def help(client: Client, message: Message):
+async def help(client, message):
     list = []
     for k, v in module_list.items():
         list.append(f'• {k}: {v}<br>')

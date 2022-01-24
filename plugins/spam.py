@@ -1,13 +1,14 @@
 import asyncio
 from pyrogram import Client, filters
-from pyrogram.types import Message
 from plugins.settings.main_settings import module_list, file_list
 
 from prefix import my_prefix
+
 prefix = my_prefix()
 
+
 @Client.on_message(filters.command("statspam", prefixes=prefix) & filters.me)
-async def statspam(client: Client, message: Message):
+async def statspam(client, message):
     quantity = message.command[1]
     spam_text = " ".join(message.command[2:])
     quantity = int(quantity)
@@ -18,8 +19,9 @@ async def statspam(client: Client, message: Message):
         await msg.delete()
         await asyncio.sleep(0.1)
 
+
 @Client.on_message(filters.command("spam", prefixes=prefix) & filters.me)
-async def spam(client: Client, message: Message):
+async def spam(client, message):
     quantity = message.command[1]
     spam_text = " ".join(message.command[2:])
     quantity = int(quantity)
@@ -40,7 +42,7 @@ async def spam(client: Client, message: Message):
 
 
 @Client.on_message(filters.command("fastspam", prefixes=prefix) & filters.me)
-async def fastspam(client: Client, message: Message):
+async def fastspam(client, message):
     quantity = message.command[1]
     spam_text = " ".join(message.command[2:])
     quantity = int(quantity)
@@ -61,7 +63,7 @@ async def fastspam(client: Client, message: Message):
 
 
 @Client.on_message(filters.command("slowspam", prefixes=prefix) & filters.me)
-async def slowspam(client: Client, message: Message):
+async def slowspam(client, message):
     quantity = message.command[1]
     spam_text = " ".join(message.command[2:])
     quantity = int(quantity)
@@ -77,15 +79,17 @@ async def slowspam(client: Client, message: Message):
         return
 
     for _ in range(quantity):
-        msg = await client.send_message(message.chat.id, spam_text)
+        await client.send_message(message.chat.id, spam_text)
         await asyncio.sleep(0.9)
 
+
 @Client.on_message(filters.command("help_spam", prefixes=prefix) & filters.me)
-async def help_spam(client: Client, message: Message):
+async def help_spam(client, message):
     await message.edit(f"""```{prefix}spam [amount of spam] [spam text]``` - **Start spam.**
 ```{prefix}statspam [amount of spam] [spam text]``` - **Send and delete.**
 ```{prefix}fastspam [amount of spam] [spam text]``` - **Start fast spam.**
 ```{prefix}slowspam [amount of spam] [spam text]``` - **Start slow spam**""")
-    
+
+
 module_list['Spam'] = f'Many commands. View them: {prefix}help_spam'
 file_list['Spam'] = 'spam.py'

@@ -1,14 +1,15 @@
 from pyrogram import Client, filters
-from pyrogram.types import Message
 from subprocess import Popen, PIPE, TimeoutExpired
 from time import perf_counter
 from plugins.settings.main_settings import module_list, file_list
 
 from prefix import my_prefix
+
 prefix = my_prefix()
 
+
 @Client.on_message(filters.command(["shell", "sh"], prefix) & filters.me)
-async def example_edit(client: Client, message: Message):
+async def example_edit(client, message):
     if not message.reply_to_message and len(message.command) == 1:
         return await message.edit(
             "<b>Specify the command in message text or in reply</b>"
@@ -32,9 +33,11 @@ async def example_edit(client: Client, message: Message):
             text += "<b>Output:</b>\n" f"<code>{stdout}</code>\n\n"
         if stderr:
             text += "<b>Error:</b>\n" f"<code>{stderr}</code>\n\n"
-        text += f"<b>Completed in {stop_time - start_time} seconds with code {cmd_obj.returncode}</b>"
+        time = round(stop_time - start_time, 3) * 1000
+        text += f"<b>Completed in {time} miliseconds with code {cmd_obj.returncode}</b> "
     await message.edit(text)
     cmd_obj.kill()
+
 
 module_list['Sh'] = f'{prefix}sh'
 file_list['Sh'] = 'sh.py'

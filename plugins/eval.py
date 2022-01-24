@@ -1,6 +1,5 @@
-from pyrogram import Client, filters
-from pyrogram.types import Message
 import sys
+from pyrogram import Client, filters
 from io import StringIO
 from plugins.settings.main_settings import module_list, file_list
 
@@ -8,7 +7,7 @@ from prefix import my_prefix
 prefix = my_prefix()
 
 @Client.on_message(filters.command("eval", prefixes=prefix) & filters.me)
-def user_exec(client: Client, message: Message):
+def user_exec(client, message):
     reply = message.reply_to_message
     code = ""
     try:

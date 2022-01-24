@@ -1,5 +1,4 @@
 from pyrogram import Client, filters
-from pyrogram.types import Message
 from plugins.settings.main_settings import module_list, file_list
 import asyncio
 import time
@@ -8,11 +7,8 @@ from prefix import my_prefix
 prefix = my_prefix()
 
 
-
-
-# Демотиватор
 @Client.on_message(filters.command("dem", prefix) & filters.me)
-async def demotivator(client: Client, message: Message):
+async def demotivator(client, message):
     await message.edit("Creating demotivator..")
 
     if message.reply_to_message.photo:

@@ -1,5 +1,4 @@
 from pyrogram import Client, filters
-from pyrogram.types import Message
 from plugins.settings.main_settings import module_list, file_list
 
 from prefix import my_prefix
@@ -7,7 +6,7 @@ prefix = my_prefix()
 
 
 @Client.on_message(filters.command("del", prefix) & filters.me)
-async def delete_messages(client: Client, message: Message):
+async def delete_messages(client, message):
     if message.reply_to_message:
         message_id = message.reply_to_message.message_id
         await client.delete_messages(message.chat.id, message_id)
@@ -15,14 +14,13 @@ async def delete_messages(client: Client, message: Message):
 
 
 @Client.on_message(filters.command("purge", prefix) & filters.me)
-async def purge(client: Client, message: Message):
+async def purge(client, message):
     try:
         if message.reply_to_message:
             r = message.reply_to_message.message_id
             m = message.message_id
             msgs = []
             await message.delete()
-            v = m - r
             while r != m:
                 msgs.append(int(r))
                 r += 1

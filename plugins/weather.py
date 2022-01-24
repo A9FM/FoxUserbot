@@ -1,12 +1,12 @@
 from pyrogram import Client, filters
-from pyrogram.types import Message
 from plugins.settings.main_settings import module_list, file_list
-import asyncio
 import requests
 import os
 
 from prefix import my_prefix
+
 prefix = my_prefix()
+
 
 def get_pic(city):
     file_name = f"{city}.png"
@@ -25,7 +25,7 @@ def get_pic(city):
 
 
 @Client.on_message(filters.command("weather", prefixes=prefix) & filters.me)
-async def weather(client: Client, message: Message):
+async def weather(client, message):
     city = message.command[1]
     await message.edit("Check weather...")
     r = requests.get(f"https://wttr.in/{city}?m?M?0?q?T&lang=ru")
@@ -35,6 +35,7 @@ async def weather(client: Client, message: Message):
         photo=get_pic(city),
         reply_to_message_id=message.message_id)
     os.remove(f"{city}.png")
+
 
 module_list['Weather'] = f'{prefix}weather [city]'
 file_list['Weather'] = 'weather.py'

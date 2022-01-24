@@ -1,5 +1,4 @@
 from pyrogram import Client, filters
-from pyrogram.types import Message
 from plugins.settings.main_settings import module_list, file_list
 from time import perf_counter
 
@@ -7,7 +6,7 @@ from prefix import my_prefix
 prefix = my_prefix()
 
 @Client.on_message(filters.command('ping', prefixes=prefix) & filters.me)
-async def ping(client: Client, message: Message):
+async def ping(client, message):
     start1 = perf_counter()
     await message.edit("test Ping..")
     end1 = perf_counter()
@@ -24,7 +23,7 @@ async def ping(client: Client, message: Message):
     await message.edit("test pinG...")
     end4 = perf_counter()
 
-    pinges = ((end1 + end2 + end3 + end4) / 3) - ((start1 + start2 + start3 + start4) / 3)
+    pinges = ((end1 + end2 + end3 + end4) / 4) - ((start1 + start2 + start3 + start4) / 4)
     ping = pinges * 1000
 
     if 0 <= ping <= 199:

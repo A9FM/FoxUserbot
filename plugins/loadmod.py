@@ -1,5 +1,4 @@
 from pyrogram import Client, filters
-from pyrogram.types import Message
 from plugins.settings.main_settings import module_list, file_list
 from plugins.restarter import restart
 import wget
@@ -8,7 +7,7 @@ from prefix import my_prefix
 prefix = my_prefix()
 
 @Client.on_message(filters.command('loadmod', prefixes=prefix) & filters.me)
-async def loadmod(client: Client, message: Message):
+async def loadmod(client, message):
     if not message.reply_to_message:
         await message.edit("<b>Load module...</b>")
         link = message.command[1]

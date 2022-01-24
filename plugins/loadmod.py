@@ -9,7 +9,7 @@ prefix = my_prefix()
 
 @Client.on_message(filters.command('loadmod', prefixes=prefix) & filters.me)
 async def loadmod(client: Client, message: Message):
-    if not message.reply_to_message.:
+    if not message.reply_to_message:
         await message.edit("<b>Load module...</b>")
         link = message.command[1]
         wget.download(link, 'plugins/')

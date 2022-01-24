@@ -3,7 +3,9 @@ from pyrogram.types import Message
 from plugins.settings.main_settings import module_list, file_list
 
 from prefix import my_prefix
+
 prefix = my_prefix()
+
 
 @Client.on_message(filters.command("webshot", prefixes=prefix) & filters.me)
 async def webshot(client: Client, message: Message):
@@ -21,6 +23,7 @@ async def webshot(client: Client, message: Message):
         await client.send_message(
             message.chat.id, "**Something went wrong...**"
         )
-        
+
+
 module_list['Webshot'] = f'{prefix}webshot [link]'
 file_list['Webshot'] = 'webshot.py'

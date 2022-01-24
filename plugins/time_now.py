@@ -6,7 +6,7 @@ from datetime import datetime
 from prefix import my_prefix
 prefix = my_prefix()
 
-@Client.on_message(filters.command("time", prefixes=prefix) & filters.me)
+@Client.on_message(filters.command("time", prefix) & filters.me)
 async def time(client: Client, message: Message):
     await message.edit(datetime.datetime.now().strftime('Date %d.%m.%Y\nTime %H:%M:%S'))
 

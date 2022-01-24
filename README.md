@@ -1,5 +1,5 @@
 <p align="center">
-        <img src="https://github.com/FoxUserbot/FoxUserbot/raw/main/logo.png" width="500" alt="FoxUserbot">
+    <img src="https://github.com/FoxUserbot/FoxUserbot/raw/main/logo.png" width="500" alt="FoxUserbot">
     </a>
     <br>
     <b>FoxUserbot</b>
@@ -47,11 +47,6 @@ module_list['Example'] = f'{prefix}example_edit'
 file_list['Example'] = 'example.py'
 ```
 
-<h1>Groups and support</h1>
-<a href="https://t.me/foxteam0">
-<img alt="Telegram" src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram">
-</a>
-
 <h1>Install and Start</h1>
 <h2>Termux / Linux (deb)</h2>
 <h3>Install</h3>
@@ -83,6 +78,11 @@ Open install.py
 
 <h3>How to start</h3>
 Open windows.bat
+
+<h1>Groups and support</h1>
+<a href="https://t.me/foxteam0">
+<img alt="Telegram" src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram">
+</a>
 
 <h1>Credits</h1>
 ➤ Gh0stC0der1 <a href="https://github.com/gh0stc0der1">Github</a><br>

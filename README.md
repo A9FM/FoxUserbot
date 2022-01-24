@@ -52,7 +52,7 @@ file_list['Example'] = 'example.py'
 <img alt="Telegram" src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram">
 </a>
 
-<h1>Install</h1>
+<h1>Install and Start</h1>
 <h2>Termux / Linux (deb)</h2>
 <h3>Install</h3>
 

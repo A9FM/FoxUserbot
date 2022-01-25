@@ -11,7 +11,7 @@ logging.basicConfig(
     level=logging.INFO
 )
 
-api_id, api_hash = my_api()
+api_id, api_hash, device_mod = my_api()
 
 # Restart
 app = Client("my_account")
@@ -32,4 +32,4 @@ with app:
 
 # start
 plugins = dict(root="plugins")
-Client = Client("my_account", api_id=api_id, api_hash=api_hash, plugins=plugins).run()
+Client = Client("my_account", api_id=api_id, api_hash=api_hash, device_model=device_mod, plugins=plugins).run()

@@ -22,8 +22,8 @@ with app:
         try:
             app.send_message(sys.argv[1], text)
         except Exception as f:
-            app.send_message(self, text)
-            raise
+            app.send_message("me", f"Got error: {f}\n\n" + text)
+            pass
     app.join_chat("foxteam0")
     app.stop()
 

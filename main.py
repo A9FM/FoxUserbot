@@ -1,6 +1,7 @@
 import logging
 import sys
 from pyrogram import Client
+from configurator import my_api
 
 logging.basicConfig(
     filename="temp/fox_userbot.log",
@@ -10,8 +11,10 @@ logging.basicConfig(
     level=logging.INFO
 )
 
-# restart
-app = Client("my_account")
+api_id, api_hash = my_api()
+
+# Restart
+app = Client("my_account", )
 with app:
     if len(sys.argv) == 4:
         restart_type = sys.argv[3]
@@ -29,4 +32,4 @@ with app:
 
 # start
 plugins = dict(root="plugins")
-Client = Client("my_account", plugins=plugins).run()
+Client = Client("my_account", api_id=api_id, api_hash=api_hash, plugins=plugins).run()

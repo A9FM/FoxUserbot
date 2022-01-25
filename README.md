@@ -19,9 +19,13 @@
 </a>
 
 <a href="https://github.com/FoxUserbot/FoxUserbot">    
-    <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/FoxUserbot/FoxUserbot?style=for-the-badge">
-    <img alt="GitHub Repo size" src="https://img.shields.io/github/repo-size/FoxUserbot/FoxUserbot?style=for-the-badge">
+    <img alt="GitHub Repo Stars" src="https://img.shields.io/github/stars/FoxUserbot/FoxUserbot?style=for-the-badge">
+    <img alt="GitHub Repo Size" src="https://img.shields.io/github/repo-size/FoxUserbot/FoxUserbot?style=for-the-badge">
+    <img alt="GitHub CodeFactor" src="https://www.codefactor.io/repository/github/FoxUserbot/FoxUserbot/badge?style=for-the-badge">
 </a>
+
+
+
 </p>
 
 

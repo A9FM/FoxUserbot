@@ -14,7 +14,7 @@ logging.basicConfig(
 api_id, api_hash = my_api()
 
 # Restart
-app = Client("my_account", )
+app = Client("my_account")
 with app:
     if len(sys.argv) == 4:
         restart_type = sys.argv[3]

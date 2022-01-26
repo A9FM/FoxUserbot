@@ -7,11 +7,6 @@ from prefix import my_prefix
 prefix = my_prefix()
 
 
-@Client.on_message(filters.command("example_edit", prefixes=prefix) & filters.me)
-async def example_edit(client, message):
-    await message.edit("<code>This is an example module</code>")
-
-
 @Client.on_message(filters.command("short", prefix) & filters.me)
 async def shorten_link_command(client, message):
     await message.edit("Shorting...")

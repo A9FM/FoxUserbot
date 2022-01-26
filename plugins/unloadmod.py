@@ -4,7 +4,6 @@ from plugins.restarter import restart
 import os
 
 from prefix import my_prefix
-
 prefix = my_prefix()
 
 
@@ -20,7 +19,7 @@ async def unloadmod(client, message):
         await message.edit("**The module has been successfully unloaded.**\nRestart...")
         await restart(message, restart_type="restart")
     except Exception as error:
-        await message.edit(f"**An error has occurred.**\nLog: {error}")
+        await message.edit(f"**An error has occurred.**\nLog: not found {error}")
 
 
 module_list['Unloadmod'] = f'{prefix}unloadmod [module name]'

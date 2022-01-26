@@ -1,10 +1,11 @@
-from pyrogram import Client, filters
-from plugins.settings.main_settings import module_list, file_list
-from plugins.restarter import restart
 import wget
+from pyrogram import Client, filters
+from plugins.restarter import restart
+from plugins.settings.main_settings import module_list
 
 from prefix import my_prefix
 prefix = my_prefix()
+
 
 @Client.on_message(filters.command('loadmod', prefixes=prefix) & filters.me)
 async def loadmod(client, message):
@@ -22,5 +23,6 @@ async def loadmod(client, message):
             f"<b>**The module has been loaded successfully.**\nRestart..."
         )
         await restart(message, restart_type="restart")
+
 
 module_list['Loadmod'] = f'{prefix}loadmod [link to the module]'

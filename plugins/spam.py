@@ -7,88 +7,45 @@ from prefix import my_prefix
 prefix = my_prefix()
 
 
-@Client.on_message(filters.command("statspam", prefixes=prefix) & filters.me)
-async def statspam(client, message):
-    quantity = message.command[1]
-    spam_text = " ".join(message.command[2:])
-    quantity = int(quantity)
+@Client.on_message(filters.command("stspam", prefix) & filters.me)
+async def sticker_spam(client, message):
+    if not message.text.split(prefix + "stspam", maxsplit=1)[1]:
+        await message.edit("<i>Error</i>")
+
+    sticker = message.command[3]
+    count = int(message.command[1])
+    sleep = int(message.command[2])
     await message.delete()
-    for _ in range(quantity):
-        msg = await client.send_message(message.chat.id, spam_text)
-        await asyncio.sleep(0.1)
-        await msg.delete()
-        await asyncio.sleep(0.1)
+
+    for _ in range(count):
+        await client.send_sticker(message.chat.id, sticker)
+        await asyncio.sleep(sleep)
 
 
-@Client.on_message(filters.command("spam", prefixes=prefix) & filters.me)
+@Client.on_message(filters.command("spam", prefix) & filters.me)
 async def spam(client, message):
-    quantity = message.command[1]
-    spam_text = " ".join(message.command[2:])
-    quantity = int(quantity)
+    if not message.text.split(prefix + "spam", maxsplit=1)[1]:
+        await message.edit("<i>Error</i>")
+        return
+    count = message.command[1]
+    text = " ".join(message.command[3:])
+    count = int(count)
+    try:
+        sleep = int(message.command[2])
+    except Exception as error:
+        await message.edit(error)
+        sleep = float(message.command[2])
     await message.delete()
 
-    if message.reply_to_message:
-        reply_to_id = message.reply_to_message.message_id
-        for _ in range(quantity):
-            await client.send_message(
-                message.chat.id, spam_text, reply_to_message_id=reply_to_id
-            )
-            await asyncio.sleep(0.15)
-        return
-
-    for _ in range(quantity):
-        await client.send_message(message.chat.id, spam_text)
-        await asyncio.sleep(0.15)
-
-
-@Client.on_message(filters.command("fastspam", prefixes=prefix) & filters.me)
-async def fastspam(client, message):
-    quantity = message.command[1]
-    spam_text = " ".join(message.command[2:])
-    quantity = int(quantity)
-    await message.delete()
-
-    if message.reply_to_message:
-        reply_to_id = message.reply_to_message.message_id
-        for _ in range(quantity):
-            await client.send_message(
-                message.chat.id, spam_text, reply_to_message_id=reply_to_id
-            )
-            await asyncio.sleep(0.02)
-        return
-
-    for _ in range(quantity):
-        await client.send_message(message.chat.id, spam_text)
-        await asyncio.sleep(0.02)
-
-
-@Client.on_message(filters.command("slowspam", prefixes=prefix) & filters.me)
-async def slowspam(client, message):
-    quantity = message.command[1]
-    spam_text = " ".join(message.command[2:])
-    quantity = int(quantity)
-    await message.delete()
-
-    if message.reply_to_message:
-        reply_to_id = message.reply_to_message.message_id
-        for _ in range(quantity):
-            await client.send_message(
-                message.chat.id, spam_text, reply_to_message_id=reply_to_id
-            )
-            await asyncio.sleep(0.9)
-        return
-
-    for _ in range(quantity):
-        await client.send_message(message.chat.id, spam_text)
-        await asyncio.sleep(0.9)
+    for _ in range(count):
+        await client.send_message(message.chat.id, text)
+        await asyncio.sleep(sleep)
 
 
 @Client.on_message(filters.command("help_spam", prefixes=prefix) & filters.me)
 async def help_spam(client, message):
-    await message.edit(f"""```{prefix}spam [amount of spam] [spam text]``` - **Start spam.**
-```{prefix}statspam [amount of spam] [spam text]``` - **Send and delete.**
-```{prefix}fastspam [amount of spam] [spam text]``` - **Start fast spam.**
-```{prefix}slowspam [amount of spam] [spam text]``` - **Start slow spam**""")
+    await message.edit(f"""```{prefix}stspam [ID] [Count] [Delay]``` - **Start sticker spam.**
+```{prefix}spam [Count] [Delay] [Text]``` - **Start message spam.**""")
 
 
 module_list['Spam'] = f'Many commands. View them: {prefix}help_spam'

@@ -69,7 +69,7 @@ sh -c "$(wget https://raw.githubusercontent.com/FoxUserbot/FoxUserbot/main/insta
 <h3>How to start</h3>
 
 ```
-cd FoxUserbot && python3 main.py
+cd FoxUserbot-main && python3 main.py
 ```
 
 <h2>Windows</h2>

@@ -7,8 +7,8 @@ import os
 import sys
 
 from prefix import my_prefix
-
 prefix = my_prefix()
+
 
 config_path = os.path.join(sys.path[0], "config.ini")
 config = configparser.ConfigParser()

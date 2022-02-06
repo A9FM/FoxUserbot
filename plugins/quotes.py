@@ -3,7 +3,6 @@ from plugins.settings.main_settings import module_list, file_list
 import asyncio
 
 from prefix import my_prefix
-
 prefix = my_prefix()
 
 

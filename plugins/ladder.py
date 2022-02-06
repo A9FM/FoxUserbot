@@ -4,6 +4,7 @@ from plugins.settings.main_settings import module_list, file_list
 from prefix import my_prefix
 prefix = my_prefix()
 
+
 @Client.on_message(filters.command("ladder", prefixes=prefix) & filters.me)
 async def ladder(client, message):
     orig_text = message.text.split(prefix + "ladder ", maxsplit=1)[1]

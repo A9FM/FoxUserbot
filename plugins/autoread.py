@@ -4,13 +4,15 @@ from plugins.settings.main_settings import module_list, file_list
 from prefix import my_prefix
 prefix = my_prefix()
 
-
 the_regex = r"^r\/([^\s\/])+"
 i = filters.chat([])
+
+
 @Client.on_message(i)
 async def auto_read(client, message):
     await client.read_history(message.chat.id)
     message.continue_propagation()
+
 
 @Client.on_message(filters.command("autoread", prefix) & filters.me)
 async def add_to_auto_read(client, message):

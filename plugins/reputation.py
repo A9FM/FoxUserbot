@@ -1,13 +1,13 @@
 from pyrogram import Client, filters
-from pyrogram.types import Message
 from plugins.settings.main_settings import module_list, file_list
 from pathlib import Path
 
 from prefix import my_prefix
 prefix = my_prefix()
 
+
 @Client.on_message(filters.text & filters.incoming & filters.regex("^\-$") & filters.reply)
-async def repDown(client: Client, message: Message):
+async def repDown(client, message):
     try:
         if message.reply_to_message.from_user.is_self:
             if Path(f"temp/reputation").is_file():
@@ -26,7 +26,7 @@ async def repDown(client: Client, message: Message):
 
 
 @Client.on_message(filters.text & filters.incoming & filters.regex("^\+$") & filters.reply)
-async def repUp(client: Client, message: Message):
+async def repUp(client, message):
     try:
         if message.reply_to_message.from_user.is_self:
             if Path(f"temp/reputation").is_file():
@@ -43,8 +43,9 @@ async def repUp(client: Client, message: Message):
     except:
         pass
 
+
 @Client.on_message(filters.command("rep", prefix) & filters.me)
-async def repNakrutka(client: Client, message: Message):
+async def repNakrutka(client, message):
     try:
         with open("temp/reputation", "w+") as f:
             rep = str(int(message.command[1]))
@@ -59,6 +60,7 @@ async def repNakrutka(client: Client, message: Message):
         with open("temp/reputation", "w+") as f:
             f.write(str(int(0)))
             f.close()
+
 
 module_list['Reputation'] = f'reply "+" or "-" from another user | {prefix}rep [number]'
 file_list['Reputation'] = 'reputation.py'

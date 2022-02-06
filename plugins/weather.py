@@ -4,7 +4,6 @@ import requests
 import os
 
 from prefix import my_prefix
-
 prefix = my_prefix()
 
 

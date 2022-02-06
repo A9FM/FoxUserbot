@@ -4,7 +4,6 @@ import asyncio
 import time
 
 from prefix import my_prefix
-
 prefix = my_prefix()
 
 

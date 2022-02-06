@@ -5,6 +5,7 @@ import asyncio
 from prefix import my_prefix
 prefix = my_prefix()
 
+
 @Client.on_message(filters.command("spamban", prefix) & filters.me)
 async def spamban(client, message):
     await message.edit("Checking your account for Spamban...")

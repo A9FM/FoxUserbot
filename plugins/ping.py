@@ -5,6 +5,7 @@ from time import perf_counter
 from prefix import my_prefix
 prefix = my_prefix()
 
+
 @Client.on_message(filters.command('ping', prefixes=prefix) & filters.me)
 async def ping(client, message):
     start1 = perf_counter()
@@ -27,16 +28,14 @@ async def ping(client, message):
     ping = pinges * 1000
 
     if 0 <= ping <= 199:
-      connect = "🟢 Stable"
+        connect = "🟢 Stable"
     if 199 <= ping <= 400:
-      connect = "🟠 Good"
+        connect = "🟠 Good"
     if 400 <= ping <= 600:
-      connect = "🔴 Not stable"
+        connect = "🔴 Not stable"
     if 600 <= ping:
-      connect = "⚠ Check you network connection"
+        connect = "⚠ Check you network connection"
     await message.edit(f"<b>🏓 Pong\n📶</b> {round(ping)} ms\n{connect}")
-
-
 
 
 module_list['Ping'] = f'{prefix}ping'

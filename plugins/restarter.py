@@ -1,14 +1,13 @@
 import os
 import zipfile
-
 import wget
 from pyrogram import Client, filters
 from pyrogram.types import Message
-
 from plugins.settings.main_settings import module_list, file_list
-from prefix import my_prefix
 
+from prefix import my_prefix
 prefix = my_prefix()
+
 
 async def restart(message: Message, restart_type):
     if restart_type == "update":
@@ -47,6 +46,7 @@ async def restart_get(client, message):
         await restart(message, restart_type="restart")
     except:
         await message.edit("**An error occured...**")
+
 
 # Update
 @Client.on_message(filters.command('update', prefixes=prefix) & filters.me)

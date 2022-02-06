@@ -5,6 +5,7 @@ import time
 from prefix import my_prefix
 prefix = my_prefix()
 
+
 @Client.on_message(filters.command("progressbar", prefixes=prefix) & filters.me)
 async def progressbar(client, message):
     text = message.text.split(prefix + "progressbar ", maxsplit=1)[1]

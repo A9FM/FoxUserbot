@@ -3,7 +3,6 @@ from plugins.settings.main_settings import module_list, version
 from telegraph import Telegraph
 
 from prefix import my_prefix
-
 prefix = my_prefix()
 
 

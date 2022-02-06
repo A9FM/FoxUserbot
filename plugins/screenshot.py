@@ -4,12 +4,10 @@ from pyrogram.raw import functions
 from plugins.settings.main_settings import module_list, file_list
 
 from prefix import my_prefix
-
 prefix = my_prefix()
 
 
-@Client.on_message(
-    filters.command(["scr", "screenshot"], prefixes=prefix) & filters.private & filters.me)
+@Client.on_message(filters.command(["scr", "screenshot"], prefixes=prefix) & filters.private & filters.me)
 async def screenshot(client, message):
     quantity = int(message.command[1])
     await message.delete()

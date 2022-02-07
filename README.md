@@ -52,21 +52,28 @@ file_list['Example'] = 'example.py'
 ```
 
 <h1>Install and Start</h1>
-<h2>Termux / Linux (deb)</h2>
-<h3>Install</h3>
-
-curl
-```
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/FoxUserbot/FoxUserbot/main/install.sh)"
-```
+<h2>Termux / Linux (deb) / MacOS</h2>
+<h3>How to install?</h3>
 
 
-wget
+- Termux
+
 ```
-sh -c "$(wget https://raw.githubusercontent.com/FoxUserbot/FoxUserbot/main/install.sh -O -)"
+pkg update -y && pkg install python3 wget -y && wget -O foxub.$$ https://github.com/FoxUserbot/FoxUserbot/archive/refs/heads/main.zip && (unzip foxub.$$ && rm foxub.$$ && cd FoxUserbot-main && python3 install.py)
+```
+- Linux (based Debian)
+
+```
+apt update -y && apt install python3 python3-pip wget -y && wget -O foxub.$$ https://github.com/FoxUserbot/FoxUserbot/archive/refs/heads/main.zip && (unzip foxub.$$ && rm foxub.$$ && cd FoxUserbot-main && python3 install.py)
 ```
 
-<h3>How to start</h3>
+- MacOS (NOT TESTED!)
+
+```
+xcode-select --install && /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)" && brew install python3 && brew install wget && wget -O foxub.$$ https://github.com/FoxUserbot/FoxUserbot/archive/refs/heads/main.zip && (unzip foxub.$$ && rm foxub.$$ && cd FoxUserbot-main && python3 install.py)
+```
+
+<h3>How to start?</h3>
 
 ```
 cd FoxUserbot-main && python3 main.py
@@ -74,14 +81,16 @@ cd FoxUserbot-main && python3 main.py
 
 <h2>Windows</h2>
 <h3>Install</h3>
-Install <a href="https://www.python.org/downloads/">python3</a>
 
-Download and Unzip <a href="https://github.com/FoxUserbot/FoxUserbot/archive/refs/heads/main.zip">This file (!don't rename the directory!)</a>
+- Install <a href="https://www.python.org/downloads/">python3</a>
 
-Open install.py
+- Download and Unzip <a href="https://github.com/FoxUserbot/FoxUserbot/archive/refs/heads/main.zip">This file (!don't rename the directory!)</a>
+
+- Open install.py
 
 <h3>How to start</h3>
-Open windows.bat
+
+- Open windows.bat
 
 <h1>Groups and support</h1>
 <a href="https://t.me/foxteam0">

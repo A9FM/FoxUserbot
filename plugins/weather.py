@@ -10,7 +10,7 @@ prefix = my_prefix()
 def get_pic(city):
     file_name = f"{city}.png"
     with open(file_name, "wb") as pic:
-        response = requests.get(f"http://wttr.in/{city}_2&lang=us.png", stream=True)
+        response = requests.get(f"http://wttr.in/{city}_2&lang=en.png", stream=True)
 
         if not response.ok:
             print(response)
@@ -27,7 +27,7 @@ def get_pic(city):
 async def weather(client, message):
     city = message.command[1]
     await message.edit("Check weather...")
-    r = requests.get(f"https://wttr.in/{city}?m?M?0?q?T&lang=ru")
+    r = requests.get(f"https://wttr.in/{city}?m?M?0?q?T&lang=en")
     await message.edit(f"🗺 You sity/village: {r.text}")
     await client.send_photo(
         chat_id=message.chat.id,

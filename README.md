@@ -85,9 +85,13 @@ Open windows.bat
 
 <h1>Groups and support</h1>
 <a href="https://t.me/foxteam0">
-<img alt="Telegram" src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram">
+<img alt="Telegram" src="https://img.shields.io/badge/Telegram_Channel-0a0a0a?style=for-the-badge&logo=telegram">
 </a>
 
+<a href="https://t.me/foxteamchat">
+<img alt="Telegram group" src="https://img.shields.io/badge/Telegram_Group-0a0a0a?style=for-the-badge&logo=telegram">
+</a>
+    
 <h1>Credits</h1>
 ➤ Gh0stC0der1 <a href="https://github.com/gh0stc0der1">Github</a><br>
 ➤ Terexdev <a href="https://github.com/terexdev">Github</a><br>

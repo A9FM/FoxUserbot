@@ -59,12 +59,12 @@ file_list['Example'] = 'example.py'
 - Termux
 
 ```
-pkg update -y && pkg install python3 wget -y && wget -O foxub.$$ https://github.com/FoxUserbot/FoxUserbot/archive/refs/heads/main.zip && (unzip foxub.$$ && rm foxub.$$ && cd FoxUserbot-main && python3 install.py)
+pkg update -y && pkg install python3 wget -y && wget -O foxub.$$ https://github.com/FoxUserbot/FoxUserbot/archive/refs/heads/main.zip && (unzip foxub.$$ && rm -rf foxub.$$ && cd FoxUserbot-main && python3 install.py)
 ```
 - Linux (based Debian)
 
 ```
-apt update -y && apt install python3 python3-pip wget -y && wget -O foxub.$$ https://github.com/FoxUserbot/FoxUserbot/archive/refs/heads/main.zip && (unzip foxub.$$ && rm foxub.$$ && cd FoxUserbot-main && python3 install.py)
+apt update -y && apt install python3 python3-pip wget -y && wget -O foxub.$$ https://github.com/FoxUserbot/FoxUserbot/archive/refs/heads/main.zip && (unzip foxub.$$ && rm -rf foxub.$$ && cd FoxUserbot-main && python3 install.py)
 ```
 
 - MacOS
@@ -73,8 +73,10 @@ apt update -y && apt install python3 python3-pip wget -y && wget -O foxub.$$ htt
 xcode-select --install ; /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)" && brew install python3 && pip3 install --upgrade pip && pip3 install wheel && brew install wget && wget -O foxub.$$ https://github.com/FoxUserbot/FoxUserbot/archive/refs/heads/main.zip && (unzip foxub.$$ && rm foxub.$$ && cd FoxUserbot-main && python3 install.py)
 ```
 
-- CentOS (NO TESTED!)
-[Don't support]
+- CentOS
+```
+yum -y update && yum install wget python3 curl -y && wget -O foxub.$$ https://github.com/FoxUserbot/FoxUserbot/archive/refs/heads/main.zip && (unzip foxub.$$ && rm -rf foxub.$$ && cd FoxUserbot-main && python3 install.py)
+```
 
 
 <h3>How to start?</h3>

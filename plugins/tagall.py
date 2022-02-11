@@ -11,7 +11,9 @@ async def tagall(client, message):
     delay = message.command[1]
     string = ""
     if len(message.text.split()) >= 2:
-        string += f'{message.text.split(prefix + "tagall " + delay, maxsplit=1)[1]}\n'
+        text = f'{message.text.split(prefix + "tagall " + delay, maxsplit=1)[1]}\n\n'
+    else:
+        text = ""
     await message.delete()
     chat_id = message.chat.id
     limit = 1
@@ -21,7 +23,7 @@ async def tagall(client, message):
             string += f"{member.user.mention}\n"
             limit += 1
         else:
-            await client.send_message(chat_id, text=string, disable_web_page_preview=True)
+            await client.send_message(chat_id, text=(text + string), disable_web_page_preview=True)
             limit = 1
             string = ""
             try:

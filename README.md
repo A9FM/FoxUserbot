@@ -108,6 +108,4 @@ cd FoxUserbot-main && python3 main.py
 </a>
     
 <h1>Credits</h1>
-➤ Gh0stC0der1 <a href="https://github.com/gh0stc0der1">Github</a><br>
-➤ Terexdev <a href="https://github.com/terexdev">Github</a><br>
 ➤ A9FM <a href="https://github.com/A9FM">Github</a> | <a href="https://github.com/a9_fm">Telegram</a> <br>

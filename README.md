@@ -10,18 +10,24 @@
         Custom modules
     </a>
 <br><br>
+<a href="https://github.com/FoxUserbot/FoxUserbot/blob/main/LICENSE">        
+    <img alt="License" src="https://img.shields.io/github/license/FoxUserbot/FoxUserbot?style=for-the-badge">
+</a>
+
 <a href="https://github.com/FoxUserbot/FoxUserbot/commits/main">
-    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/FoxUserbot/FoxUserbot?style=for-the-badge">
+    <img alt="last-commit" src="https://img.shields.io/github/last-commit/FoxUserbot/FoxUserbot?style=for-the-badge">
 </a>
 
 <a href="https://github.com/FoxUserbot/FoxUserbot/issues">        
-    <img alt="GitHub Issues" src="https://img.shields.io/github/issues/FoxUserbot/FoxUserbot?style=for-the-badge">
+    <img alt="Issues" src="https://img.shields.io/github/issues/FoxUserbot/FoxUserbot?style=for-the-badge">
 </a>
 
-<a href="https://github.com/FoxUserbot/FoxUserbot">    
-    <img alt="GitHub Repo Stars" src="https://img.shields.io/github/stars/FoxUserbot/FoxUserbot?style=for-the-badge">
-    <img alt="GitHub Repo Size" src="https://img.shields.io/github/repo-size/FoxUserbot/FoxUserbot?style=for-the-badge">
-    <img alt="GitHub CodeFactor" src="https://www.codefactor.io/repository/github/FoxUserbot/FoxUserbot/badge?style=for-the-badge">
+<a href="https://github.com/FoxUserbot/FoxUserbot">
+    <img alt="CodeFactor" src="https://www.codefactor.io/repository/github/FoxUserbot/FoxUserbot/badge?style=for-the-badge">
+    <img alt="Stars" src="https://img.shields.io/github/stars/FoxUserbot/FoxUserbot?style=for-the-badge">
+    <img alt="Size" src="https://img.shields.io/github/repo-size/FoxUserbot/FoxUserbot?style=for-the-badge">
+    <img alt="Language" src="https://img.shields.io/github/languages/top/FoxUserbot/FoxUserbot?style=for-the-badge">
+    <img alt="Python" src="https://img.shields.io/badge/python-%3E%203.6-blue?style=for-the-badge">
 </a>
 
 

@@ -1,5 +1,4 @@
 from pyrogram import Client, filters
-from pyrogram.types import Message
 from plugins.settings.main_settings import module_list, file_list
 from plugins.restarter import restart
 import configparser

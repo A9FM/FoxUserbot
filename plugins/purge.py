@@ -5,7 +5,7 @@ from prefix import my_prefix
 prefix = my_prefix()
 
 
-@Client.on_message(filters.command("del", prefix) & filters.me)
+@Client.on_message(filters.command("del", prefixes=prefix) & filters.me)
 async def delete_messages(client, message):
     if message.reply_to_message:
         message_id = message.reply_to_message.message_id
@@ -13,7 +13,7 @@ async def delete_messages(client, message):
     await message.delete()
 
 
-@Client.on_message(filters.command("purge", prefix) & filters.me)
+@Client.on_message(filters.command("purge", prefixes=prefix) & filters.me)
 async def purge(client, message):
     try:
         if message.reply_to_message:

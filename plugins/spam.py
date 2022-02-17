@@ -6,7 +6,7 @@ from prefix import my_prefix
 prefix = my_prefix()
 
 
-@Client.on_message(filters.command("stspam", prefix) & filters.me)
+@Client.on_message(filters.command("stspam", prefixes=prefix) & filters.me)
 async def sticker_spam(client, message):
     if not message.text.split(prefix + "stspam", maxsplit=1)[1]:
         await message.edit("<i>Error</i>")
@@ -21,7 +21,7 @@ async def sticker_spam(client, message):
         await asyncio.sleep(sleep)
 
 
-@Client.on_message(filters.command("spam", prefix) & filters.me)
+@Client.on_message(filters.command("spam", prefixes=prefix) & filters.me)
 async def spam(client, message):
     if not message.text.split(prefix + "spam", maxsplit=1)[1]:
         await message.edit("<i>Error</i>")

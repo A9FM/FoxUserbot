@@ -7,7 +7,7 @@ from prefix import my_prefix
 prefix = my_prefix()
 
 
-@Client.on_message(filters.command("dem", prefix) & filters.me)
+@Client.on_message(filters.command("dem", prefixes=prefix) & filters.me)
 async def demotivator(client, message):
     await message.edit("Creating demotivator..")
 
@@ -29,7 +29,7 @@ async def demotivator(client, message):
                 photo = True
                 await message.delete()
             except:
-                await asyncio.sleep(0.5)
+                await asyncio.sleep(2)
     else:
         await message.edit("Please, reply to photo")
 

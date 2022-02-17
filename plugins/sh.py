@@ -7,7 +7,7 @@ from prefix import my_prefix
 prefix = my_prefix()
 
 
-@Client.on_message(filters.command(["shell", "sh"], prefix) & filters.me)
+@Client.on_message(filters.command(["shell", "sh"], prefixes=prefix) & filters.me)
 async def example_edit(client, message):
     if not message.reply_to_message and len(message.command) == 1:
         return await message.edit(

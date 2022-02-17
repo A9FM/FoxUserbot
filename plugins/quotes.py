@@ -6,7 +6,7 @@ from prefix import my_prefix
 prefix = my_prefix()
 
 
-@Client.on_message(filters.command("q", prefix) & filters.me)
+@Client.on_message(filters.command("q", prefixes=prefix) & filters.me)
 async def quotly(client, message):
     idstick = 0
     if not message.reply_to_message:

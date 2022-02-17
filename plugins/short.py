@@ -6,7 +6,7 @@ from prefix import my_prefix
 prefix = my_prefix()
 
 
-@Client.on_message(filters.command("short", prefix) & filters.me)
+@Client.on_message(filters.command("short", prefixes=prefix) & filters.me)
 async def shorten_link_command(client, message):
     try:
         await message.edit("Shorting...")

@@ -39,7 +39,7 @@ async def restart(message: Message, restart_type):
 
 
 # Restart
-@Client.on_message(filters.command("restart", prefix) & filters.me)
+@Client.on_message(filters.command("restart", prefixes=prefix) & filters.me)
 async def restart_get(client, message):
     try:
         await message.edit("**Restarting userbot...**")

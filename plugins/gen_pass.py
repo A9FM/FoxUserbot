@@ -4,7 +4,6 @@ import secrets
 import string
 
 from prefix import my_prefix
-
 prefix = my_prefix()
 
 

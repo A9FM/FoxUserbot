@@ -6,7 +6,7 @@ from prefix import my_prefix
 prefix = my_prefix()
 
 
-@Client.on_message(filters.command(["m", "music"], prefix) & filters.me)
+@Client.on_message(filters.command(["m", "music"], prefixes=prefix) & filters.me)
 async def send_music(client, message):
     await message.edit("Search...")
     song_name = ""
@@ -55,7 +55,7 @@ async def send_music(client, message):
 
 
 # from athphane userbot
-@Client.on_message(filters.command(["l", "lyrics"], prefix) & filters.me)
+@Client.on_message(filters.command(["l", "lyrics"], prefixes=prefix) & filters.me)
 async def send_music(client, message):
     try:
         cmd = message.command

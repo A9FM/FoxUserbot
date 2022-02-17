@@ -3,7 +3,6 @@ import colorama
 from plugins.settings.main_settings import version
 
 from prefix import my_prefix
-
 prefix = my_prefix()
 
 yellow = "\033[1;33m"

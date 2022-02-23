@@ -29,7 +29,7 @@ async def helps(client, message):
 
 <b><a href={link}>❓ | List of all commands. </a></b>
 <b><a href="https://t.me/foxteam0">💻 | Official FoxTeam Channel.</a></b>
-<b><a href="https://t.me/foxteamchat">🛡 | Official User Support Chat.</a></b>
+<b><a href="https://t.me/foxteamdiscuss">🛡 | Official User Support Chat.</a></b>
 <b><a href="https://github.com/FoxUserbot/FoxUserbot">🦊 | Github Repository.</a></b>
 <b><a href="https://github.com/FoxUserbot/FoxUserbot#how-to-install">🤔 | Installation Guide.</a></b>
 

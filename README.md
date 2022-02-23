@@ -115,7 +115,7 @@ cd FoxUserbot-main && python3 main.py
 <img alt="Telegram" src="https://img.shields.io/badge/Telegram_Channel-0a0a0a?style=for-the-badge&logo=telegram">
 </a>
 
-<a href="https://t.me/foxteamchat">
+<a href="https://t.me/foxteamdiscuss">
 <img alt="Telegram group" src="https://img.shields.io/badge/Telegram_Group-0a0a0a?style=for-the-badge&logo=telegram">
 </a>
     

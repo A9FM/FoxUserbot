@@ -84,7 +84,7 @@ xcode-select --install ; /bin/bash -c "$(curl -fsSL https://raw.githubuserconten
 yum -y update && yum install wget python3 curl -y && wget -O foxub.$$ https://github.com/FoxUserbot/FoxUserbot/archive/refs/heads/main.zip && (unzip foxub.$$ && rm -rf foxub.$$ && cd FoxUserbot-main && python3 install.py)
 ```
 
-- Astra Linnux
+- Astra Linux
 
 ```
 Empty... coming soon...

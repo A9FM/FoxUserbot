@@ -1,7 +1,6 @@
+import asyncio
 from pyrogram import Client, filters
 from plugins.settings.main_settings import module_list, file_list
-import asyncio
-import time
 
 from prefix import my_prefix
 prefix = my_prefix()
@@ -23,7 +22,7 @@ async def demotivator(client, message):
 
         while not photo:
             try:
-                await asyncio.sleep(1)
+                await asyncio.sleep(2)
                 iii = await client.get_history("memegeneration_bot")
                 await client.send_photo(chat_id=message.chat.id, photo=iii[0].photo.file_id)
                 photo = True

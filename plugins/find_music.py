@@ -6,6 +6,8 @@ from prefix import my_prefix
 prefix = my_prefix()
 
 
+bots = "vkmusic_bot"
+
 @Client.on_message(filters.command(["m", "music"], prefixes=prefix) & filters.me)
 async def send_music(client, message):
     await message.edit("Search...")
@@ -22,7 +24,7 @@ async def send_music(client, message):
         await message.delete()
         return
 
-    song_results = await client.get_inline_bot_results("deezermusicbot", song_name)
+    song_results = await client.get_inline_bot_results(bots, song_name)
 
     try:
         # send to Saved Messages because hide_via doesn't work sometimes

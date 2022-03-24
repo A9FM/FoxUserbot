@@ -15,7 +15,7 @@ async def update(client, message):
         link = "https://github.com/FoxUserbot/FoxUserbot/archive/refs/heads/main.zip"
         wget.download(link, 'temp/archive.zip')
         with zipfile.ZipFile("temp/archive.zip", "r") as zip_ref:
-            zip_ref.extractall("./..")
+            zip_ref.extractall("temp")
         os.remove("temp/archive.zip")
 
         await message.edit('**The userbot has been successfully updated**')

@@ -1,41 +1,8 @@
 # -*- coding: utf-8 -*-
-
-import logging
-import sys
-import os
 from pyrogram import Client
 from configurator import my_api
-
-
-def log():
-    if not os.path.exists("temp"):
-        os.mkdir("temp")
-    logging.basicConfig(
-        filename="temp/fox_userbot.log",
-        filemode="w",
-        format="%(asctime)s - %(message)s",
-        datefmt="%d-%b-%y %H:%M:%S",
-        level=logging.INFO
-    )
-
-
-# Restart
-def prestart():
-    app = Client("my_account")
-    with app:
-        if len(sys.argv) == 4:
-            restart_type = sys.argv[3]
-            if restart_type == "1":
-                text = "<code>Update process completed!</code>"
-            else:
-                text = "**Userbot succesfully Restarted**"
-            try:
-                app.send_message(sys.argv[1], text)
-            except Exception as f:
-                app.send_message("me", f"Got error: {f}\n\n" + text)
-                pass
-        app.join_chat("foxteam0")
-        app.stop()
+from prestarter import prestart
+from logger import log
 
 
 # start

@@ -6,7 +6,8 @@ from prefix import my_prefix
 prefix = my_prefix()
 
 
-bots = "vkmusic_bot"
+bots = "DeezerMusicBot"
+
 
 @Client.on_message(filters.command(["m", "music"], prefixes=prefix) & filters.me)
 async def send_music(client, message):

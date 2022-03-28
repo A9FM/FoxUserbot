@@ -12,8 +12,7 @@ async def qr(client, message):
         texts = message.reply_to_message.text
     elif len(message.text.split(maxsplit=1)) == 2:
         texts = message.text.split(maxsplit=1)[1]
-    text_to_qr = texts
-    text = text_to_qr.replace(' ', '%20')
+    text = texts.replace(' ', '%20')
     QRcode = f"https://api.qrserver.com/v1/create-qr-code/?size=300x300&data={text}"
     await message.delete()
     await client.send_photo(message.chat.id, QRcode)

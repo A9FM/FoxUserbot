@@ -10,4 +10,5 @@ async def send_log(client, message):
 	await message.delete()
 	await client.send_document(message.chat.id, "temp/fox_userbot.log")
 
+
 module_list['SendLog'] = f'{prefix}send_log'

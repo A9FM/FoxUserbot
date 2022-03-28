@@ -16,5 +16,6 @@ async def spamban(client, message):
     await message.delete()
     await client.forward_messages(message.chat.id, "spamBot", iii[0].message_id)
 
+
 module_list['SpamBan'] = f'{prefix}spamban'
 file_list['SpamBan'] = 'spamban.py'

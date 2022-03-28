@@ -11,14 +11,11 @@ def get_pic(city):
     file_name = f"{city}.png"
     with open(file_name, "wb") as pic:
         response = requests.get(f"http://wttr.in/{city}_2&lang=en.png", stream=True)
-
         if not response.ok:
             print(response)
-
         for block in response.iter_content(1024):
             if not block:
                 break
-
             pic.write(block)
         return file_name
 

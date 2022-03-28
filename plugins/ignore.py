@@ -9,7 +9,7 @@ the_regex = r"^r\/([^\s\/])+"
 i = filters.user([])
 
 
-@Client.on_message(i)
+@Client.on_message(i & filters.me)
 async def ignored(client, message):
     await message.delete()
 
@@ -17,27 +17,18 @@ async def ignored(client, message):
 @Client.on_message(filters.command("ignore", prefixes=prefix) & filters.me)
 async def add_ignore(client, message):
     try:
-        try:
-            users = message.command[1]
-        except:
-            users = message.reply_to_message.from_user.id
+        users = message.command[1]
+    except:
+        users = message.reply_to_message.from_user.id
 
-        try:
-            users = int(users)
-            users = str(users)
-        except:
-            useres = Client.get_users(users)
-            users = useres.id
-
-        if users in i:
-            i.remove(int(users))
-            await message.edit(f"Ignor {str(users)} deactivated")
-        else:
-            i.add(int(users))
-            await message.edit(f"Ignor {str(users)} activated")
-    except Exception as h:
-        print(h)
+    if users in i:
+        i.remove(int(users))
+        await message.edit(f"Ignor {str(users)} deactivated")
+    else:
+        i.add(int(users))
+        await message.edit(f"Ignor {str(users)} activated")
 
 
-module_list['IgnoreUser'] = f'{prefix}ignore [ID/Username]'
+
+module_list['IgnoreUser'] = f'{prefix}ignore [ID/Reply]'
 file_list['IgnoreUser'] = 'ignore.py'

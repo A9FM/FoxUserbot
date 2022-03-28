@@ -13,10 +13,7 @@ async def shorten_link_command(client, message):
         if message.reply_to_message:
             link = message.reply_to_message.text
         else:
-            try:
-                link = message.command[1]
-            except IndexError:
-                return await message.delete()
+            link = message.command[1]
 
         token = "6c2ac1846a1c1A2d5f88A3E5fbf0e14fcf96d7d0"
         get_short_url = requests.post("https://api.waa.ai/v2/links", json={"url": link},

@@ -34,6 +34,7 @@ async def aws(client, message):
     else:
         pass
 
+
 @Client.on_message(filters.command("aws", prefixes=prefix) & filters.me)
 async def aws_start(client, message):
     try:
@@ -47,18 +48,5 @@ async def aws_start(client, message):
         await message.edit(f"error {f}")
 
 
-# No AFK
-@Client.on_message(filters.command("unaws", prefixes=prefix) & filters.me)
-async def aws_stop(client, message):
-    try:
-        await message.edit(
-            f"❕ Message deleted! <b>AFK.</b>"
-        )
-        await asyncio.sleep(5)
-
-    except Exception as error:
-        await message.delete()
-
-
-module_list['AutoAnswer'] = f'{prefix}aws | {prefix}unaws'
+module_list['AutoAnswer'] = f'{prefix}aws [ID/Username] [Post ID]'
 file_list['AutoAnswer'] = 'autoanswer.py'

@@ -9,7 +9,7 @@ the_regex = r"^r\/([^\s\/])+"
 i = filters.user([])
 
 
-@Client.on_message(i & filters.me)
+@Client.on_message(i & ~filters.me)
 async def ignored(client, message):
     await message.delete()
 

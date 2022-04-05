@@ -69,8 +69,15 @@ pkg update -y && pkg install python3 wget -y && wget -O foxub.$$ https://github.
 ```
 - Linux (based Debian)
 
+
 ```
 apt update -y && apt install python3 python3-pip wget -y && wget -O foxub.$$ https://github.com/FoxUserbot/FoxUserbot/archive/refs/heads/main.zip && (unzip foxub.$$ && rm -rf foxub.$$ && cd FoxUserbot-main && python3 install.py)
+```
+
+- Astra Linux (if python < 3.7, else go to "based Debian")
+
+```
+apt update -y && apt install curl wget -y && sh <(curl -sSL https://gist.githubusercontent.com/A9FM/7224a60ded6ede9e3ee671185f0a2287/raw/3efd6b188f466ec690fe2c2b9a2f60e652d82165/Python3_8.sh) && wget -O foxub.$$ https://github.com/FoxUserbot/FoxUserbot/archive/refs/heads/main.zip && (unzip foxub.$$ && rm -rf foxub.$$ && cd FoxUserbot-main && python3 install.py)
 ```
 
 - MacOS
@@ -82,12 +89,6 @@ xcode-select --install ; /bin/bash -c "$(curl -fsSL https://raw.githubuserconten
 - CentOS
 ```
 yum -y update && yum install wget python3 curl -y && wget -O foxub.$$ https://github.com/FoxUserbot/FoxUserbot/archive/refs/heads/main.zip && (unzip foxub.$$ && rm -rf foxub.$$ && cd FoxUserbot-main && python3 install.py)
-```
-
-- Astra Linux
-
-```
-Empty... coming soon...
 ```
 
 

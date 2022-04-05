@@ -58,8 +58,7 @@ file_list['Example'] = 'example.py'
 ```
 
 <h1>Install and Start</h1>
-<h2>Termux / Linux (deb) / MacOS / CentOS</h2>
-<h3>How to install?</h3>
+<h2>How to install?</h3>
 
 
 - Termux
@@ -92,14 +91,14 @@ yum -y update && yum install wget python3 curl -y && wget -O foxub.$$ https://gi
 ```
 
 
-<h3>How to start?</h3>
+<h4>How to start?</h3>
 
 ```
 cd FoxUserbot-main && python3 main.py
 ```
 
-<h2>Windows</h2>
-<h3>Install</h3>
+<h3>Windows</h2>
+<h4>Install</h3>
 
 - Install <a href="https://www.python.org/downloads/">python3</a>
 
@@ -107,7 +106,7 @@ cd FoxUserbot-main && python3 main.py
 
 - Open install.py
 
-<h3>How to start</h3>
+<h4>How to start</h3>
 
 - Open windows.bat
 

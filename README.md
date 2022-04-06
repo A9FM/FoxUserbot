@@ -66,6 +66,7 @@ file_list['Example'] = 'example.py'
 ```
 pkg update -y && pkg install python3 wget -y && wget -O foxub.$$ https://github.com/FoxUserbot/FoxUserbot/archive/refs/heads/main.zip && (unzip foxub.$$ && rm -rf foxub.$$ && cd FoxUserbot-main && python3 install.py)
 ```
+
 - APT (Debian based)
 
 
@@ -79,15 +80,22 @@ apt update -y && apt install python3 python3-pip wget -y && wget -O foxub.$$ htt
 apt update -y && apt install curl wget -y && sh <(curl -sSL https://gist.githubusercontent.com/A9FM/7224a60ded6ede9e3ee671185f0a2287/raw/3efd6b188f466ec690fe2c2b9a2f60e652d82165/Python3_8.sh) && wget -O foxub.$$ https://github.com/FoxUserbot/FoxUserbot/archive/refs/heads/main.zip && (unzip foxub.$$ && rm -rf foxub.$$ && cd FoxUserbot-main && python3 install.py)
 ```
 
+- YUM (RHEL based)
+
+```
+yum -y update && yum install wget python3 curl -y && wget -O foxub.$$ https://github.com/FoxUserbot/FoxUserbot/archive/refs/heads/main.zip && (unzip foxub.$$ && rm -rf foxub.$$ && cd FoxUserbot-main && python3 install.py)
+```
+
+- PACMAN (Arch based)
+
+```
+pacman -S python3 wget curl && python3 <(curl -sSL https://bootstrap.pypa.io/get-pip.py) && wget -O foxub.$$ https://github.com/FoxUserbot/FoxUserbot/archive/refs/heads/main.zip && (unzip foxub.$$ && rm -rf foxub.$$ && cd FoxUserbot-main && python3 install.py)
+```
+
 - MacOS
 
 ```
 xcode-select --install ; /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)" && brew install python3 && pip3 install --upgrade pip && pip3 install wheel && brew install wget && wget -O foxub.$$ https://github.com/FoxUserbot/FoxUserbot/archive/refs/heads/main.zip && (unzip foxub.$$ && rm foxub.$$ && cd FoxUserbot-main && python3 install.py)
-```
-
-- YUM (RHEL based)
-```
-yum -y update && yum install wget python3 curl -y && wget -O foxub.$$ https://github.com/FoxUserbot/FoxUserbot/archive/refs/heads/main.zip && (unzip foxub.$$ && rm -rf foxub.$$ && cd FoxUserbot-main && python3 install.py)
 ```
 
 

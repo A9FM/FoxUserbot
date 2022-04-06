@@ -40,7 +40,8 @@
 
 <p>To add your module to the bot, create a pull request in the <a href='https://github.com/FoxUserbot/Modules/'>custom_modules</a> repository</p>
 
-```python3
+```
+python3
 from pyrogram import Client, filters
 from plugins.settings.main_settings import module_list, file_list
 
@@ -83,7 +84,7 @@ apt update -y && apt install curl wget -y && sh <(curl -sSL https://gist.githubu
 - YUM (RHEL based)
 
 ```
-yum -y update && yum install wget python3 curl -y && wget -O foxub.$$ https://github.com/FoxUserbot/FoxUserbot/archive/refs/heads/main.zip && (unzip foxub.$$ && rm -rf foxub.$$ && cd FoxUserbot-main && python3 install.py)
+yum -y update && yum install wget python3 curl -y && python3 <(curl -sSL https://bootstrap.pypa.io/get-pip.py) && wget -O foxub.$$ https://github.com/FoxUserbot/FoxUserbot/archive/refs/heads/main.zip && (unzip foxub.$$ && rm -rf foxub.$$ && cd FoxUserbot-main && python3 install.py)
 ```
 
 - PACMAN (Arch based)

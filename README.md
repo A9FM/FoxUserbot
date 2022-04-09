@@ -40,8 +40,7 @@
 
 <p>To add your module to the bot, create a pull request in the <a href='https://github.com/FoxUserbot/Modules/'>custom_modules</a> repository</p>
 
-```
-python3
+```python3
 from pyrogram import Client, filters
 from plugins.settings.main_settings import module_list, file_list
 

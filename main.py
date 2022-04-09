@@ -1,17 +1,10 @@
 # -*- coding: utf-8 -*-
-from pyrogram import Client
-from configurator import my_api
-from prestarter import prestart
-from logger import log
 
+# Check Library
+print("AutoUpdate library python...\n")
+from install import check
+check()
 
-# start
-if __name__ == "__main__":
-    api_id, api_hash, device_mod = my_api()
-    log()
-    prestart()
-    plugins = dict(root="plugins")
-    Client = Client("my_account", api_id=api_id, api_hash=api_hash, device_model=device_mod, plugins=plugins).run()
-
-
-
+# Start userbot
+from start_UB import start_userbot
+start_userbot()

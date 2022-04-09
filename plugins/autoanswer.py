@@ -1,5 +1,3 @@
-import asyncio
-import datetime
 import os
 from pathlib import Path
 from pyrogram import Client, filters
@@ -9,28 +7,30 @@ from prefix import my_prefix
 prefix = my_prefix()
 
 
+def users():
+    ignore = []
+    i = os.listdir("temp/autoanswer_DB")
+    for list in i:
+        ignore.append(int(list))
+    return ignore
+
+
+
 @Client.on_message(filters.private & ~filters.me & ~filters.bot)
 async def aws(client, message):
+    ids = message.from_user.id
     if Path(f"./temp/autoanswer").is_file():
-        with open(f"./temp/autoanswer", encoding="utf-8") as f:
-            fromuser = str(message.from_user.id)
-            if Path(f"./temp/autoanswer_DB/{fromuser}").is_file():
-                pass
-            else:
+        if not ids in users():
+            with open(f"./temp/autoanswer", encoding="utf-8") as f:
+                fromuser = str(ids)
                 status = f.read().split()
                 chat_ids = status[0]
                 message_ids = status[1]
                 await client.forward_messages(message.chat.id, str(chat_ids), int(message_ids))
-                try:
-                    with open(f"temp/autoanswer_DB/{fromuser}", "w+", encoding='utf-8') as w:
-                        w.write(str(f"0"))
-                        w.close()
-                except:
-                    os.mkdir("temp/autoanswer_DB")
-                    with open(f"temp/autoanswer_DB/{fromuser}", "w+", encoding='utf-8') as w:
-                        w.write(str(f"0"))
-                        w.close()
-        f.close()
+                with open(f"temp/autoanswer_DB/{fromuser}", "w+", encoding='utf-8') as w:
+                    w.write(str(f"0"))
+                    w.close()
+            f.close()
     else:
         pass
 

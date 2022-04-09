@@ -6,10 +6,10 @@ prefix = my_prefix()
 
 
 the_regex = r"^r\/([^\s\/])+"
-i = filters.user([])
+i = []
 
 
-@Client.on_message(i & ~filters.me)
+@Client.on_message(filters.user(i) & ~filters.me)
 async def ignored(client, message):
     await message.delete()
 
@@ -27,7 +27,6 @@ async def add_ignore(client, message):
     else:
         i.add(int(users))
         await message.edit(f"Ignor {str(users)} activated")
-
 
 
 module_list['IgnoreUser'] = f'{prefix}ignore [ID/Reply]'

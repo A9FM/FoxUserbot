@@ -4,7 +4,7 @@ logging.basicConfig(level=logging.CRITICAL)
 
 
 def get_req():
-    requirements = ["install", "telegraph", "pyrogram", "requests", "wget", "rich", "wikipedia", "--upgrade"]
+    requirements = ["install", "wheel", "telegraph", "pyrogram", "requests", "wget", "rich", "wikipedia", "--upgrade"]
     return requirements
 
 

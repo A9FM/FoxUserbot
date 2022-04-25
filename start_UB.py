@@ -16,8 +16,7 @@ def start_userbot():
     check_structure()
     api_id, api_hash, device_mod = my_api()
     prestart(api_id, api_hash, device_mod)
-    plugins = dict(root="plugins")
-    Client = Client("my_account", api_id=api_id, api_hash=api_hash, device_model=device_mod, plugins=plugins).run()
+    Client = Client("my_account", api_id=api_id, api_hash=api_hash, device_model=device_mod, plugins=dict(root="plugins")).run()
 
 
 if __name__ == "__main__":

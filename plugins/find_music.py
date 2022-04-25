@@ -39,7 +39,7 @@ async def send_music(client, message):
         # forward as a new message from Saved Messages
         saved = await client.get_messages("me", int(saved.updates[1].message.id))
         reply_to = (
-            message.reply_to_message.message_id
+            message.reply_to_message.id
             if message.reply_to_message
             else None
         )

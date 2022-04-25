@@ -8,7 +8,7 @@ prefix = my_prefix()
 @Client.on_message(filters.command("del", prefixes=prefix) & filters.me)
 async def delete_messages(client, message):
     if message.reply_to_message:
-        message_id = message.reply_to_message.message_id
+        message_id = message.reply_to_message.id
         await client.delete_messages(message.chat.id, message_id)
     await message.delete()
 
@@ -17,15 +17,15 @@ async def delete_messages(client, message):
 async def purge(client, message):
     try:
         if message.reply_to_message:
-            r = message.reply_to_message.message_id
-            m = message.message_id
+            r = message.reply_to_message.id
+            m = message.id
             msgs = []
             await message.delete()
             while r != m:
                 msgs.append(int(r))
                 r += 1
             await client.delete_messages(message.chat.id, msgs)
-            r = message.reply_to_message.message_id
+            r = message.reply_to_message.id
             msgs = []
             while r != m:
                 msgs.append(int(r))

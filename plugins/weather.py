@@ -29,7 +29,7 @@ async def weather(client, message):
     await client.send_photo(
         chat_id=message.chat.id,
         photo=get_pic(city),
-        reply_to_message_id=message.message_id)
+        reply_to_message_id=message.id)
     os.remove(f"{city}.png")
 
 

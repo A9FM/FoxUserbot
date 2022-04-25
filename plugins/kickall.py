@@ -1,3 +1,4 @@
+import asyncio
 from pyrogram import Client, filters
 from plugins.settings.main_settings import module_list, file_list
 
@@ -27,5 +28,18 @@ async def kickall_hide(client, message):
             pass
 
 
-module_list['KickallSubs'] = f'{prefix}kickall'
-file_list['KickallSubs'] = 'kickall.py'
+@Client.on_message(filters.command("kickall_withbot", prefixes=prefix) & filters.me)
+async def tagall(client, message):
+    await message.delete()
+    chat_id = message.chat.id
+    string = ""
+    limit = 1
+    icm = client.iter_chat_members(chat_id)
+    async for member in icm:
+        string = f"/ban {member.user.mention}\n"
+        await client.send_message(chat_id, text=string)
+        await asyncio.sleep(2)
+
+
+module_list['KickAllSubs'] = f'{prefix}kickall | {prefix}kickall_withbot'
+file_list['KickAllSubs'] = 'kickall.py'

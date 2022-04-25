@@ -15,7 +15,7 @@ def start_userbot():
     from check import check_structure
     check_structure()
     api_id, api_hash, device_mod = my_api()
-    prestart()
+    prestart(api_id, api_hash, device_mod)
     plugins = dict(root="plugins")
     Client = Client("my_account", api_id=api_id, api_hash=api_hash, device_model=device_mod, plugins=plugins).run()
 

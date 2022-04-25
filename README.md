@@ -30,8 +30,6 @@
     <img alt="Python" src="https://img.shields.io/badge/python-%3E%203.6-blue?style=for-the-badge">
 </a>
 
-<h1>DON'T SUPPORT PYROGRAM 2.0!!!</h1>
-
 </p>
 
 <h1>Custom modules</h1>

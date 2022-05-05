@@ -35,5 +35,5 @@ async def wiki(client, message):
         )
 
 
-module_list['Wikipedia'] = f'{prefix}wiki [word]'
+module_list['Wikipedia'] = f'{prefix}wiki [RU/EN] [WORD]'
 file_list['Wikipedia'] = 'wiki.py'

@@ -8,7 +8,6 @@ prefix = my_prefix()
 
 @Client.on_message(filters.command("q", prefixes=prefix) & filters.me)
 async def quotly(client, message):
-    idstick = 0
     if not message.reply_to_message:
         await message.edit("Reply to message")
         return
@@ -21,16 +20,12 @@ async def quotly(client, message):
 
     while not is_sticker:
         try:
-            msg = await client.get_history("@QuotLyBot", limit=1)
-            idstick = msg[0].sticker.file_id
+            async for iii in client.get_chat_history("QuotLyBot", limit=1):
+                await client.send_sticker(message.chat.id, iii.sticker.file_id)
             is_sticker = True
+            await message.delete()
         except:
             await asyncio.sleep(1)
-
-    await asyncio.gather(
-        message.delete(),
-        client.send_sticker(message.chat.id, idstick)
-    )
 
 
 module_list['Quotes'] = f'{prefix}q [reply]'

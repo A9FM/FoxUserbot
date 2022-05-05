@@ -63,7 +63,7 @@ async def get_full_user_inf(client: Client, message: Message):
     try:
         msg = await client.send_message("@creationdatebot", f"/id {user}")
         await asyncio.sleep(1)
-        date_dict = await client.get_history("@creationdatebot")
+        date_dict = await client.get_chat_history("@creationdatebot")
         date_dict = date_dict[0].text
         await client.send(
             functions.messages.DeleteHistory(

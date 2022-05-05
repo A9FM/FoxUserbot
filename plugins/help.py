@@ -10,7 +10,7 @@ prefix = my_prefix()
 async def helps(client, message):
     lists = []
     for k, v in module_list.items():
-        lists.append(f'• {k}: {v}<br>')
+        lists.append(f'➣ {k}: {v}<br>')
     a = " "
     for i in lists:
         a = a.lstrip() + f'{i}'

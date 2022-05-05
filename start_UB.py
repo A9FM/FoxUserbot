@@ -1,8 +1,3 @@
-# -*- coding: utf-8 -*-
-import logging
-logging.basicConfig(level=logging.CRITICAL)
-
-
 def get_req():
     requirements = ["install", "wheel", "telegraph", "pyrogram", "requests", "wget", "rich", "wikipedia", "--upgrade"]
     return requirements

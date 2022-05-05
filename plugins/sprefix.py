@@ -29,5 +29,5 @@ async def sprefix(client, message):
         await message.edit("<b>prefix don't be None</b>")
 
 
-module_list['Sprefix'] = f'{prefix}sp'
-file_list['Sprefix'] = 'sprefix.py'
+module_list['SetPrefix'] = f'{prefix}sp'
+file_list['SetPrefix'] = 'sprefix.py'

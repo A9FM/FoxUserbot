@@ -9,7 +9,6 @@ prefix = my_prefix()
 @Client.on_message(filters.command("dem", prefixes=prefix) & filters.me)
 async def demotivator(client, message):
     await message.edit("Creating demotivator..")
-
     if message.reply_to_message.photo:
         await client.unblock_user("memegeneration_bot")
         capt = "1. " + message.text.split(prefix + "dem ", maxsplit=1)[1]
@@ -23,11 +22,12 @@ async def demotivator(client, message):
         while not photo:
             try:
                 await asyncio.sleep(2)
-                iii = await client.get_history("memegeneration_bot")
-                await client.send_photo(chat_id=message.chat.id, photo=iii[0].photo.file_id)
+                async for iii in client.get_chat_history("memegeneration_bot", limit=1):
+                    await client.send_photo(chat_id=message.chat.id, photo=iii.photo.file_id)
                 photo = True
                 await message.delete()
-            except:
+            except Exception as f:
+                await message.edit(f)
                 await asyncio.sleep(2)
     else:
         await message.edit("Please, reply to photo")

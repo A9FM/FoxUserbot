@@ -12,7 +12,7 @@ async def online_now(client, message):
     await message.edit("AutoOnline activated")
     while True:
         iii = await client.send_message("me", "bruh")
-        await client.delete_messages("me", iii.message_id)
+        await client.delete_messages("me", iii.id)
         await asyncio.sleep(45)
 
 

@@ -11,10 +11,8 @@ async def spamban(client, message):
     await message.edit("Checking your account for Spamban...")
     await client.unblock_user("spambot")
     await client.send_message("spambot", "/start")
-    await asyncio.sleep(1)
-    iii = await client.get_history("spambot")
-    await message.delete()
-    await client.forward_messages(message.chat.id, "spamBot", iii[0].message_id)
+    async for iii in client.get_chat_history("spambot", limit=1):
+        await message.edit(iii.text)
 
 
 module_list['SpamBan'] = f'{prefix}spamban'

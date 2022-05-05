@@ -13,7 +13,7 @@ def prestart(api_id, api_hash, device_mod):
             else:
                 text = "**Userbot succesfully Restarted**"
             try:
-                app.send_message(sys.argv[1], text)
+                app.send_message(int(sys.argv[1]), text)
             except Exception as f:
                 app.send_message("me", f"Got error: {f}\n\n" + text)
                 pass

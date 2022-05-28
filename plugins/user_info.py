@@ -32,18 +32,12 @@ async def get_user_inf(client: Client, message: Message):
     except:
         username = "None"
 
-    try:
-        about = user_info.full_user.about
-    except:
-        about = "None"
-
     user_info = f"""==========
 [$] Username: <b>{username}</b>
 [$] Id: <code>{str(user_info.id)}</code>
 [$] Bot: <code>{str(user_info.is_bot)}</code>
 [$] Scam: <code>{str(user_info.is_scam)}</code>
 [$] Name: <code>{str(user_info.first_name)}</code>
-[$] BIO: <code>{about}</code>
 </b>"""
     await message.edit(user_info)
 

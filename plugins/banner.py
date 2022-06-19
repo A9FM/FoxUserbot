@@ -15,7 +15,6 @@ print(f"""[red]
 ╚═╝└─┘└─┘┴└─└─┘└─┘ ┴ 
 [/red][green]
 Channel: @foxteam0
-Help: @foxteamchat
 Version: [red]{version}[/red]
 Prefix: [[red]{prefix}[/red]]
 

@@ -39,59 +39,54 @@
 ```python3
 from pyrogram import Client, filters
 from plugins.settings.main_settings import module_list, file_list
-
 from prefix import my_prefix
 prefix = my_prefix()
-
-
 @Client.on_message(filters.command("example_edit", prefixes=prefix) & filters.me)
 async def example_edit(client, message):
     await message.edit("<code>This is an example module</code>")
-
-
 module_list['Example'] = f'{prefix}example_edit'
 file_list['Example'] = 'example.py'
 ```
 
 <h1>Install and Start</h1>
-<h2>How to install?</h3>
+<h2>How to install?</h2>
 
 
 - Termux
 
 ```
-pkg update -y && pkg install python3 wget -y && termux-wake-lock && wget -O foxub.$$ https://github.com/FoxUserbot/FoxUserbot/archive/refs/heads/main.zip && (unzip foxub.$$ && rm -rf foxub.$$ && cd FoxUserbot-main && python3 install.py)
+pkg update -y && pkg install python3 wget -y && termux-wake-lock && wget -O foxub.$$ https://github.com/FoxUserbot/FoxUserbot/archive/refs/heads/main.zip && (unzip foxub.$$ && rm -rf foxub.$$ && cd FoxUserbot-main && python3 main.py)
 ```
 
 - APT (Debian based)
 
 
 ```
-apt update -y && apt install python3 python3-pip wget -y && wget -O foxub.$$ https://github.com/FoxUserbot/FoxUserbot/archive/refs/heads/main.zip && (unzip foxub.$$ && rm -rf foxub.$$ && cd FoxUserbot-main && python3 install.py)
+apt update -y && apt install python3 python3-pip wget -y && wget -O foxub.$$ https://github.com/FoxUserbot/FoxUserbot/archive/refs/heads/main.zip && (unzip foxub.$$ && rm -rf foxub.$$ && cd FoxUserbot-main && python3 main.py)
 ```
 
 - Astra Linux (if python < 3.7, else go to "Debian based")
 
 ```
-apt update -y && apt install curl wget -y && sh <(curl -sSL https://gist.githubusercontent.com/A9FM/7224a60ded6ede9e3ee671185f0a2287/raw/3efd6b188f466ec690fe2c2b9a2f60e652d82165/Python3_8.sh) && wget -O foxub.$$ https://github.com/FoxUserbot/FoxUserbot/archive/refs/heads/main.zip && (unzip foxub.$$ && rm -rf foxub.$$ && cd FoxUserbot-main && python3 install.py)
+apt update -y && apt install curl wget -y && sh <(curl -sSL https://gist.githubusercontent.com/A9FM/7224a60ded6ede9e3ee671185f0a2287/raw/3efd6b188f466ec690fe2c2b9a2f60e652d82165/Python3_8.sh) && wget -O foxub.$$ https://github.com/FoxUserbot/FoxUserbot/archive/refs/heads/main.zip && (unzip foxub.$$ && rm -rf foxub.$$ && cd FoxUserbot-main && python3 main.py)
 ```
 
 - YUM (RHEL based)
 
 ```
-yum -y update && yum install wget python3 curl -y && python3 <(curl -sSL https://bootstrap.pypa.io/get-pip.py) && wget -O foxub.$$ https://github.com/FoxUserbot/FoxUserbot/archive/refs/heads/main.zip && (unzip foxub.$$ && rm -rf foxub.$$ && cd FoxUserbot-main && python3 install.py)
+yum -y update && yum install wget python3 curl -y && python3 <(curl -sSL https://bootstrap.pypa.io/get-pip.py) && wget -O foxub.$$ https://github.com/FoxUserbot/FoxUserbot/archive/refs/heads/main.zip && (unzip foxub.$$ && rm -rf foxub.$$ && cd FoxUserbot-main && python3 main.py)
 ```
 
 - PACMAN (Arch based)
 
 ```
-pacman -S python3 wget curl && python3 <(curl -sSL https://bootstrap.pypa.io/get-pip.py) && wget -O foxub.$$ https://github.com/FoxUserbot/FoxUserbot/archive/refs/heads/main.zip && (unzip foxub.$$ && rm -rf foxub.$$ && cd FoxUserbot-main && python3 install.py)
+pacman -S python3 wget curl && python3 <(curl -sSL https://bootstrap.pypa.io/get-pip.py) && wget -O foxub.$$ https://github.com/FoxUserbot/FoxUserbot/archive/refs/heads/main.zip && (unzip foxub.$$ && rm -rf foxub.$$ && cd FoxUserbot-main && python3 main.py)
 ```
 
 - MacOS
 
 ```
-xcode-select --install ; /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)" && brew install python3 && pip3 install --upgrade pip && pip3 install wheel && brew install wget && wget -O foxub.$$ https://github.com/FoxUserbot/FoxUserbot/archive/refs/heads/main.zip && (unzip foxub.$$ && rm foxub.$$ && cd FoxUserbot-main && python3 install.py)
+xcode-select --install ; /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)" && brew install python3 && pip3 install --upgrade pip && pip3 install wheel && brew install wget && wget -O foxub.$$ https://github.com/FoxUserbot/FoxUserbot/archive/refs/heads/main.zip && (unzip foxub.$$ && rm foxub.$$ && cd FoxUserbot-main && python3 main.py)
 ```
 
 
@@ -108,7 +103,7 @@ cd FoxUserbot-main && python3 main.py
 
 - Download and Unzip <a href="https://github.com/FoxUserbot/FoxUserbot/archive/refs/heads/main.zip">This file</a>
 
-- Open install.py
+- Open main.py
 
 <h4>How to start</h3>
 

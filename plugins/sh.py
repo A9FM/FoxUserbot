@@ -2,6 +2,8 @@ from pyrogram import Client, filters
 from subprocess import Popen, PIPE, TimeoutExpired
 from time import perf_counter
 from plugins.settings.main_settings import module_list, file_list
+import random
+import os
 
 from prefix import my_prefix
 prefix = my_prefix()
@@ -20,7 +22,7 @@ async def example_edit(client, message):
     )
     cmd_obj = Popen(cmd_text, shell=True, stdout=PIPE, stderr=PIPE, text=True)
     await message.edit("<b>Running...</b>")
-    text = f"<code>$ {cmd_text}</code>\n\n"
+    text = f"$ <code>{cmd_text}</code>\n\n"
     try:
         start_time = perf_counter()
         stdout, stderr = cmd_obj.communicate(timeout=60)
@@ -29,12 +31,39 @@ async def example_edit(client, message):
     else:
         stop_time = perf_counter()
         if stdout:
-            text += "<b>Output:</b>\n" f"<code>{stdout}</code>\n\n"
+            stdout_output = f"{stdout}"
+            text += "<b>Output:</b>\n" f"<code>{stdout}</code>\n"
+        else:
+            stdout_output = ""
+
         if stderr:
-            text += "<b>Error:</b>\n" f"<code>{stderr}</code>\n\n"
+            stderr_output = f"{stderr}"
+            text += "<b>Error:</b>\n" f"<code>{stderr}</code>\n"
+        else:
+            stderr_output = ""
+
         time = round(stop_time - start_time, 3) * 1000
         text += f"<b>Completed in {time} miliseconds with code {cmd_obj.returncode}</b> "
-    await message.edit(text)
+
+    try:
+        await message.edit(text)
+    except:
+        output = f"{stdout_output}\n\n{stderr_output}"
+        command = f"{cmd_text}"
+
+        await message.edit("Result too much, send with document...")
+
+        i = random.randint(1, 9999)
+        with open(f"temp/result{i}.txt", "w") as file:
+            file.write(f"{output}")
+
+        try:
+            await client.send_document(message.chat.id, f"temp/result{i}.txt", caption=f"<code>{command}</code>")
+            await message.delete()
+        except:
+            await client.send_document(message.chat.id, f"temp/result{i}.txt", caption="Result")
+            await message.edit(f"<code>{command}</code>")
+        os.remove(f"result{i}.txt")
     cmd_obj.kill()
 
 

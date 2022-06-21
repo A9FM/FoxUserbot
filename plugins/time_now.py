@@ -8,9 +8,8 @@ prefix = my_prefix()
 
 @Client.on_message(filters.command("time", prefixes=prefix) & filters.me)
 async def time(client, message):
-    now = datetime.datetime.now()
-    time_now = now.strftime("Date: %d/%m/%Y\nTime: %H:%M:%S")
-    await message.edit(time_now)
+    now = datetime.datetime.now().strftime("Date: %d/%m/%Y\nTime: %H:%M:%S")
+    await message.edit(now)
 
 
 module_list['TimeNow'] = f'{prefix}time'

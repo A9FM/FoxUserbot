@@ -3,7 +3,7 @@ import logging
 import pip
 import os
 
-requirements = ["install", "wheel", "telegraph", "pyrogram", "requests", "wget", "rich", "wikipedia", "--upgrade"]
+requirements = ["install", "wheel", "telegraph", "pyrogram", "requests", "wget", "rich", "wikipedia", "gTTS", "--upgrade"]
 
 
 def check_structure():

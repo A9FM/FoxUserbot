@@ -2,7 +2,7 @@ import os
 import sys
 import configparser
 
-config_path = os.path.join(sys.path[0], "config.ini")
+config_path = os.path.join(".", "config.ini")
 config = configparser.ConfigParser()
 config.read(config_path)
 
@@ -36,6 +36,6 @@ def my_api():
         api_id = config_id
         api_hash = config_hash
         device_model = config_model
-        print(f"Not found in config api\nLog: {NotFound}\nGenerating config.ini")
+        print(f"Not found config.ini\nGenerating new...")
         pass
     return api_id, api_hash, device_model

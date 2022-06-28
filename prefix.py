@@ -15,7 +15,7 @@ def my_prefix():
     except:
         config.add_section("prefix")
         config.set("prefix", "prefix", "!")
-        with open(".", "w") as config_file:
+        with open("config.ini", "w") as config_file:
             config.write(config_file)
         prefix = "!"
     return prefix

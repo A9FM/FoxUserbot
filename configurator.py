@@ -2,13 +2,13 @@ import os
 import sys
 import configparser
 
-config_path = os.path.join(sys.path[0], "config.ini")
-config = configparser.ConfigParser()
-config.read(config_path)
 
 config_id = "2860432"
 config_hash = "2fde6ca0f8ae7bb58844457a239c7214"
 config_model = "FoxUserbot"
+
+config = configparser.ConfigParser()
+config.read("config.ini")
 
 
 def api():
@@ -21,16 +21,16 @@ def api():
 def my_api():
     try:
         api_id, api_hash, device_model = api()
-    except Exception as NotFound:
+    except:
         config.add_section("pyrogram")
         config.set("pyrogram", "api_id", config_id)
         config.set("pyrogram", "api_hash", config_hash)
         config.set("pyrogram", "device_model", config_model)
-        with open(config_path, "w") as config_file:
+        with open("config.ini", "w") as config_file:
             config.write(config_file)
+
         api_id = config_id
         api_hash = config_hash
         device_model = config_model
-        print(f"Not found in config api\nLog: {NotFound}\nGenerating config.ini")
-        pass
+        print(f"Not found config.ini\nGenerating new...")
     return api_id, api_hash, device_model

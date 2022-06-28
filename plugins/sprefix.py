@@ -9,17 +9,17 @@ from prefix import my_prefix
 prefix = my_prefix()
 
 
-config_path = os.path.join(sys.path[0], "config.ini")
 config = configparser.ConfigParser()
-config.read(config_path)
+config.read("config.ini")
 
 
 @Client.on_message(filters.command("sp", prefixes=prefix) & filters.me)
 async def sprefix(client, message):
     if len(message.command) > 1:
         prefixgett = message.command[1]
+        config.add_section("prefix")
         config.set("prefix", "prefix", prefixgett)
-        with open(config_path, "w") as config_file:
+        with open("config.ini", "w") as config_file:
             config.write(config_file)
         await message.edit(
             f"<b>prefix [ <code>{prefixgett}</code> ] set!</b>\nRestarting userbot..."

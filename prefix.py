@@ -2,9 +2,8 @@ import os
 import sys
 import configparser
 
-config_path = os.path.join(sys.path[0], "config.ini")
 config = configparser.ConfigParser()
-config.read(config_path)
+config.read("config.ini")
 
 
 def get_prefix():
@@ -15,10 +14,10 @@ def get_prefix():
 def my_prefix():
     try:
         prefix = get_prefix()
-    except configparser.NoSectionError:
+    except:
         config.add_section("prefix")
         config.set("prefix", "prefix", "!")
-        with open(config_path, "w") as config_file:
+        with open("config.ini", "w") as config_file:
             config.write(config_file)
         prefix = "!"
     return prefix

@@ -16,7 +16,6 @@ async def delete_messages(client, message):
 @Client.on_message(filters.command("purge", prefixes=prefix) & filters.me)
 async def purge(client, message):
     try:
-
         try:
             g = message.command[1]
             try:

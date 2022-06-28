@@ -10,6 +10,7 @@ prefix = my_prefix()
 
 
 config = configparser.ConfigParser()
+config.read("config.ini")
 
 
 @Client.on_message(filters.command("sp", prefixes=prefix) & filters.me)

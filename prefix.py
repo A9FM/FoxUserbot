@@ -3,6 +3,8 @@ import sys
 import configparser
 
 config = configparser.ConfigParser()
+config.read("config.ini")
+
 
 def get_prefix():
     prefix = config.get("prefix", "prefix")

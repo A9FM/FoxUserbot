@@ -29,8 +29,8 @@ def my_api():
         with open("config.ini", "w") as config_file:
             config.write(config_file)
 
-        #api_id = config_id
-        #api_hash = config_hash
-        #device_model = config_model
+        api_id = config_id
+        api_hash = config_hash
+        device_model = config_model
         print(f"Not found config.ini\nGenerating new...")
     return api_id, api_hash, device_model

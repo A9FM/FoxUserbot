@@ -21,13 +21,15 @@ def api():
 def my_api():
     try:
         api_id, api_hash, device_model = api()
-    except Exception as NotFound:
+    except:
+        os.remove("config.ini")
         config.add_section("pyrogram")
         config.set("pyrogram", "api_id", config_id)
         config.set("pyrogram", "api_hash", config_hash)
         config.set("pyrogram", "device_model", config_model)
         with open(config_path, "w") as config_file:
             config.write(config_file)
+
         api_id = config_id
         api_hash = config_hash
         device_model = config_model

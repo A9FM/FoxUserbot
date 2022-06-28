@@ -22,7 +22,10 @@ def my_api():
     try:
         api_id, api_hash, device_model = api()
     except:
-        os.remove("config.ini")
+        try:
+            os.remove("config.ini")
+        except:
+            pass
         config.add_section("pyrogram")
         config.set("pyrogram", "api_id", config_id)
         config.set("pyrogram", "api_hash", config_hash)

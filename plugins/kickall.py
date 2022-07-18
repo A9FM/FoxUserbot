@@ -1,4 +1,6 @@
 import asyncio
+import re
+from datetime import datetime, timedelta
 from pyrogram import Client, filters
 from plugins.settings.main_settings import module_list, file_list
 
@@ -38,5 +40,21 @@ async def tagall(client, message):
         await client.send_message(chat_id, text=string)
 
 
-module_list['KickAllSubs'] = f'{prefix}kickall | {prefix}kickall_withbot'
+@Client.on_message(filters.command('kickdeleted', prefixes=prefix) & filters.me)
+async def kickall(client, message):
+    await message.edit("kick all deleted account from members!")
+    member = client.get_chat_members(message.chat.id)
+    deleted = 0
+    async for alls in member:
+        try:
+            l = alls.user.first_name
+            if alls.user.first_name == None:
+                await client.ban_chat_member(message.chat.id, alls.user.id, datetime.now() + timedelta(days=1))
+                deleted += 1
+                await message.edit(f"I kick {deleted} deleted account!")
+        except:
+            pass
+    await message.edit(f"Completed!\nI kicked {deleted} deleted accounts!")
+
+module_list['KickAllSubs'] = f'{prefix}kickall | {prefix}kickall_withbot | {prefix}kickdeleted'
 file_list['KickAllSubs'] = 'kickall.py'

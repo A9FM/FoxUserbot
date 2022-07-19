@@ -51,7 +51,6 @@ async def kickall(client, message):
             if alls.user.first_name == None:
                 await client.ban_chat_member(message.chat.id, alls.user.id, datetime.now() + timedelta(days=1))
                 deleted += 1
-                await message.edit(f"I kick {deleted} deleted account!")
         except:
             pass
     await message.edit(f"Completed!\nI kicked {deleted} deleted accounts!")

@@ -17,7 +17,6 @@ config.read("config.ini")
 async def sprefix(client, message):
     if len(message.command) > 1:
         prefixgett = message.command[1]
-        config.add_section("prefix")
         config.set("prefix", "prefix", prefixgett)
         with open("config.ini", "w") as config_file:
             config.write(config_file)

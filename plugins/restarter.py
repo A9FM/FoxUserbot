@@ -15,23 +15,24 @@ async def restart(message: Message, restart_type):
         text = "1"
     else:
         text = "2"
-    try:
+
+    if os.name == "nt":
         await os.execvp(
-            "python3",
+            "python",
             [
-                "python3",
-                "./main.py",
+                "python",
+                "main.py",
                 f"{message.chat.id}",
                 f"{message.id}",
                 f"{text}",
             ],
         )
-    except:
+    else:
         await os.execvp(
-            "python",
+            "python3",
             [
-                "python",
-                "./main.py",
+                "python3",
+                "main.py",
                 f"{message.chat.id}",
                 f"{message.id}",
                 f"{text}",
@@ -66,6 +67,7 @@ async def update(client, message):
         with zipfile.ZipFile("temp/archive.zip", "r") as zip_ref:
             zip_ref.extractall(".")
         os.remove("temp/archive.zip")
+        shutil.rmtree("temp/FoxUserbot-main")
 
         await message.edit('**Userbot succesfully updated\nRestarting...**')
         await restart(message, restart_type="update")

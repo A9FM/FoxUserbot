@@ -13,7 +13,6 @@ async def ignored(client, message):
     await message.delete()
 
 
-
 @Client.on_message(filters.command("ignore", prefixes=prefix) & filters.me)
 async def add_ignore(client, message):
     try:

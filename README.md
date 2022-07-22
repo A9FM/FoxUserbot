@@ -96,7 +96,7 @@ xcode-select --install ; /bin/bash -c "$(curl -fsSL https://raw.githubuserconten
 <h4>How to start?</h3>
 
 ```
-cd FoxUserbot-main && python3 main.py
+termux-wake-lock ; cd FoxUserbot-main && python3 main.py
 ```
 
 <h3>Windows</h2>

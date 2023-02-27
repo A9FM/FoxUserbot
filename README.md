@@ -128,3 +128,7 @@ termux-wake-lock ; cd FoxUserbot-main && python3 main.py
     
 <h1>Credits</h1>
 ➤ A9FM <a href="https://github.com/A9FM">Github</a> | <a href="https://github.com/a9_fm">Telegram</a> <br>
+
+---
+
+Thank you all!

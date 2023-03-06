@@ -71,7 +71,7 @@ apt update -y && sudo apt install python3 python3-pip wget -y && wget -O foxub.$
 - Astra Linux (if python < 3.7, else go to "Debian based")
 
 ```
-apt update -y && sudo apt install curl wget -y && sh <(curl -sSL https://gist.githubusercontent.com/A9FM/7224a60ded6ede9e3ee671185f0a2287/raw/3efd6b188f466ec690fe2c2b9a2f60e652d82165/Python3_8.sh) && wget -O foxub.$$ https://github.com/FoxUserbot/FoxUserbot/archive/refs/heads/main.zip && (unzip foxub.$$ && rm -rf foxub.$$ && cd FoxUserbot-main && python3 main.py)
+apt update -y && sudo apt install curl wget -y && sh <(curl -sSL https://raw.githubusercontent.com/FoxUserbot/FoxUserbot/main/HowToGetPython3_8.sh) && wget -O foxub.$$ https://github.com/FoxUserbot/FoxUserbot/archive/refs/heads/main.zip && (unzip foxub.$$ && rm -rf foxub.$$ && cd FoxUserbot-main && python3 main.py)
 ```
 
 - YUM (RHEL based)

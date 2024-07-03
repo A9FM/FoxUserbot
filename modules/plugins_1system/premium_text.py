@@ -1,7 +1,7 @@
 # https://github.com/ArThirtyFour
 
 from pyrogram import Client, filters
-from plugins.settings.main_settings import module_list, file_list
+from modules.plugins_1system.settings.main_settings import module_list, file_list
 from prefix import my_prefix
 
 

@@ -3,8 +3,8 @@ import sys
 import os
 
 
-def prestart(api_id, api_hash, device_mod , phone_number):
-    app = Client("my_account", api_id=api_id, api_hash=api_hash, device_model=device_mod, phone_number=phone_number)
+def prestart(api_id, api_hash, device_mod):
+    app = Client("my_account", api_id=api_id, api_hash=api_hash, device_model=device_mod)
     with app:
         if len(sys.argv) == 4:
             restart_type = sys.argv[3]
@@ -17,5 +17,3 @@ def prestart(api_id, api_hash, device_mod , phone_number):
             except Exception as f:
                 app.send_message("me", f"Got error: {f}\n\n" + text)
                 pass
-                
-        app.join_chat("foxteam0")

@@ -42,14 +42,13 @@ def userbot():
     from pyrogram import Client
     from configurator import my_api
     from prestarter import prestart
-    api_id, api_hash, phone_number , device_mod = my_api()
-    prestart(api_id, api_hash, device_mod, phone_number=phone_number)
+    api_id, api_hash, device_mod = my_api()
+    prestart(api_id, api_hash, device_mod)
     Client = Client(
         "my_account",
         api_id=api_id,
         api_hash=api_hash,
         device_model=device_mod,
-        phone_number=phone_number,
         plugins=dict(root="plugins")
     ).run()
 

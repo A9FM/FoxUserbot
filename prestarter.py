@@ -3,8 +3,8 @@ import sys
 import os
 
 
-def prestart(api_id, api_hash, device_mod):
-    app = Client("my_account", api_id=api_id, api_hash=api_hash, device_model=device_mod)
+def prestart(api_id, api_hash, device_mod , phone_number):
+    app = Client("my_account", api_id=api_id, api_hash=api_hash, device_model=device_mod, phone_number=phone_number)
     with app:
         if len(sys.argv) == 4:
             restart_type = sys.argv[3]

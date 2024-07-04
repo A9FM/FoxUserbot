@@ -41,6 +41,20 @@ from pyrogram import Client, filters
 from modules.plugins_1system.settings.main_settings import module_list, file_list
 from prefix import my_prefix
 
+# If you need to install an external module via pip
+# import the following line of code and install the library with the required parameter
+
+# from requirements_installer import install_library
+# install_library("requests -U") 
+#
+# ^^^ pip3 install requests -U
+#
+# ==
+#
+# from requirements_installer import install_library
+# install_library("requests==2.32.3") 
+#
+# ^^^ pip3 install requests -U
 
 
 @Client.on_message(filters.command("example_edit", prefixes=my_prefix()) & filters.me)

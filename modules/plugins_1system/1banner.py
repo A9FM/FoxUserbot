@@ -15,7 +15,6 @@ Write.Print(f"""
 Github: https://github.com/FoxUserbot/FoxUserbot
 Version: {version}
 Prefix: {my_prefix()}
-
-Client Started
-Type {my_prefix()}ping to check Userbot works
 """, Colors.red_to_yellow, interval=0.0)
+
+Write.Print(f"""[LOADER] Loading system modules...\n""", Colors.green_to_blue, interval=0.0)

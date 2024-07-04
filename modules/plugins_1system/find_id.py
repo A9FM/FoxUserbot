@@ -1,8 +1,6 @@
 from pyrogram import Client, filters
 from modules.plugins_1system.settings.main_settings import module_list, file_list
-
 from prefix import my_prefix
-
 
 
 @Client.on_message(filters.command('id', prefixes=my_prefix()) & filters.me)

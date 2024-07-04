@@ -13,6 +13,7 @@ requirements = [
     "pystyle",
     "wikipedia",
     "gTTS",
+    'bs4',
     "--upgrade"
 ]
 

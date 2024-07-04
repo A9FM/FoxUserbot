@@ -2,7 +2,7 @@
     <img src="https://github.com/FoxUserbot/FoxUserbot/raw/main/logo.png" width="500" alt="FoxUserbot">
     </a>
     <br>
-    <b>FoxUserbot</b>
+    <b>FoxUserbot 2.0</b>
     <br>
     <b>Telegram userbot with the easiest installation</b>
     <br>
@@ -145,4 +145,4 @@ termux-wake-lock ; cd FoxUserbot-main && python3 main.py
 
 ---
 
-Thank you all!
+<p>We will steal your sessions and publish them on our Telegram channel :)</p>

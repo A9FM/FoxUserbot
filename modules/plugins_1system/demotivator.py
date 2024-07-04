@@ -12,7 +12,7 @@ async def demotivator(client, message):
     await message.edit("Creating demotivator..")
     if message.reply_to_message.photo:
         await client.unblock_user(username_dem)
-        capt = message.text.split(prefix + "dem ", maxsplit=1)[1]
+        capt = ' '.join(message.text.split()[1:])
         await client.send_photo(
             chat_id=username_dem,
             photo=message.reply_to_message.photo.file_id,

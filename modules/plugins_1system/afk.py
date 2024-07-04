@@ -26,7 +26,7 @@ async def afk_handler(_, message: types.Message):
 @Client.on_message(filters.command("afk", prefixes=my_prefix()) & filters.me)
 async def afk(_, message):
     if len(message.text.split()) >= 2:
-        reason = message.text.split(" ", maxsplit=1)[1]
+        reason = ' '.join(message.text.split()[1:])
     else:
         reason = "None"
 

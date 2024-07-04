@@ -13,7 +13,7 @@ async def tagallone(client, message):
         delay = 0
 
     if len(message.text.split()) >= 2:
-        text = f'{message.text.split(prefix + "tagallone " + delay, maxsplit=1)[1]}'
+        text = f'{message.text.split(my_prefix() + "tagallone " + delay, maxsplit=1)[1]}'
     else:
         text = ""
 
@@ -43,7 +43,7 @@ async def tagall(client, message):
         delay = 0
 
     if len(message.text.split()) >= 2:
-        text = f'{message.text.split(prefix + "tagall " + delay, maxsplit=1)[1]}'
+        text = f'{message.text.split(my_prefix() + "tagall " + delay, maxsplit=1)[1]}'
     else:
         text = ""
 

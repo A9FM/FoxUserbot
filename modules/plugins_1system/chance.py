@@ -8,7 +8,7 @@ from prefix import my_prefix
 
 @Client.on_message(filters.command("chance", prefixes=my_prefix()) & filters.me)
 async def chance(client, message):
-    text = message.text.split(prefix + "chance ", maxsplit=1)[1]
+    text = ' '.join(message.text.split()[1:])
     await message.edit(f"{text}\nChance: {random.randint(1, 100)}%")
 
 

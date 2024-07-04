@@ -7,7 +7,7 @@ import asyncio
 
 @Client.on_message(filters.command("type", prefixes=my_prefix()) & filters.me)
 async def types(client, message):
-    orig_text = message.text.split(prefix + "type ", maxsplit=1)[1]
+    orig_text = ' '.join(message.text.split()[1:])
     text = orig_text
     tbp = ""
     typing_symbol = "▒"

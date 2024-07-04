@@ -7,7 +7,7 @@ import asyncio
 
 @Client.on_message(filters.command("stspam", prefixes=my_prefix()) & filters.me)
 async def sticker_spam(client, message):
-    if not message.text.split(prefix + "stspam", maxsplit=1)[1]:
+    if not message.text.split(my_prefix() + "stspam", maxsplit=1)[1]:
         await message.edit("<i>Error</i>")
 
     sticker = message.command[3]
@@ -22,7 +22,7 @@ async def sticker_spam(client, message):
 
 @Client.on_message(filters.command("spam", prefixes=my_prefix()) & filters.me)
 async def spam(client, message):
-    if not message.text.split(prefix + "spam", maxsplit=1)[1]:
+    if not message.text.split(my_prefix() + "spam", maxsplit=1)[1]:
         await message.edit("<i>Error</i>")
         return
     count = message.command[1]

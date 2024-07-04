@@ -9,22 +9,25 @@ async def get_user_inf(client: Client, message: Message):
     await message.edit("<code>Receiving the information...</code>")
 
     if len(message.text.split()) >= 2:
-        try:
-            user = message.text.split()[1]
-            user = int(user)
-        except:
+        if message.text.split()[1][0]  == '@':
+            us = message.text.split()[1]
+            user = await client.get_users(us)
+            user = user.id
+        else:
             try:
-                user = message.reply_to_message.from_user.id
+                user = message.text.split()[1]
+                user = int(user)
             except:
-                user = message.from_user.id
+                try:
+                    user = message.reply_to_message.from_user.id
+                except:
+                    user = message.from_user.id
     else:
         try:
             user = message.reply_to_message.from_user.id
         except:
             user = message.from_user.id
-
     user_info = await client.get_users(user)
-
     try:
         username = f"@{user_info.username}"
     except:
@@ -45,14 +48,19 @@ async def get_full_user_inf(client: Client, message: Message):
     await message.edit("<code>Receiving the information...</code>")
 
     if len(message.text.split()) >= 2:
-        try:
-            user = message.text.split()[1]
-            user = int(user)
-        except:
+        if message.text.split()[1][0]  == '@':
+            us = message.text.split()[1]
+            user = await client.get_users(us)
+            user = user.id
+        else:
             try:
-                user = message.reply_to_message.from_user.id
+                user = message.text.split()[1]
+                user = int(user)
             except:
-                user = message.from_user.id
+                try:
+                    user = message.reply_to_message.from_user.id
+                except:
+                    user = message.from_user.id
     else:
         try:
             user = message.reply_to_message.from_user.id

@@ -13,6 +13,7 @@ requirements = [
     "pystyle",
     "wikipedia",
     "gTTS",
+    "beautifulsoup4",
     "--upgrade"
 ]
 
@@ -44,12 +45,13 @@ def userbot():
     from prestarter import prestart
     api_id, api_hash, device_mod = my_api()
     prestart(api_id, api_hash, device_mod)
+
     Client = Client(
         "my_account",
         api_id=api_id,
         api_hash=api_hash,
         device_model=device_mod,
-        plugins=dict(root="plugins")
+        plugins=dict(root="modules"),
     ).run()
 
 

@@ -7,4 +7,6 @@ requirements = [
     "--upgrade",
 ]
 
-os.system("python3 main.py")
+if __name__ == "__main__":
+    pip.main(requirements)
+    os.system("python3 main.py")

@@ -132,7 +132,7 @@ termux-wake-lock ; cd FoxUserbot-main && python3 main.py
 - Open windows.bat
 
 <h2>How to start in repl.it?</h2>
-<a href="https://replit.com/@A9-FMFM/FoxUserbot"><img alt="Run on Repl.it" src="https://camo.githubusercontent.com/05149b448485553c6f14f6430a45c12dcc79ed3c/68747470733a2f2f7265706c2e69742f62616467652f6769746875622f6a61727669733231303930342f4a6172766973" style="border-style: none; box-sizing: initial; max-width: 100%;" /></a></div>
+<a href="https://replit.com/@A9-FMFM/FoxUserbot"><img alt="Run on Repl.it" src="https://replit.com/badge/github/FoxUserbot/FoxUserBot" style="border-style: none; box-sizing: initial; max-width: 100%;" /></a></div>
 
 
 <h1>Groups and support</h1>

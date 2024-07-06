@@ -8,7 +8,6 @@ import time
 @Client.on_message(filters.command("progressbar", prefixes=my_prefix()) & filters.me)
 async def progressbar(client, message):
     text = ' '.join(message.text.split()[1:])
-
     total = 100
     bar_length = 10
     for i in range(total + 1):
